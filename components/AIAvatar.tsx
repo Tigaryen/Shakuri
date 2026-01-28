@@ -26,7 +26,7 @@ export const AIAvatar: React.FC<AIAvatarProps> = ({ prompt = '', className = '',
           <img
             src={staticImage}
             alt="Roblox Character"
-            className="w-[140%] h-[140%] object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700 group-hover:scale-110"
+            className="w-[140%] h-[140%] object-cover absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent opacity-50 pointer-events-none"></div>
         </div>
