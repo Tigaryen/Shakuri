@@ -11,9 +11,9 @@ interface AIAvatarProps {
 
 export const AIAvatar: React.FC<AIAvatarProps> = ({ prompt = '', className = '', size = 'md', staticImage }) => {
   const sizeClasses = {
-    sm: 'w-24 h-24',
-    md: 'w-64 h-64',
-    lg: 'w-80 h-80',
+    sm: 'w-32 h-32',
+    md: 'w-80 h-80',
+    lg: 'w-96 h-96',
     hero: 'w-[300px] h-[300px] md:w-[500px] md:h-[500px]'
   };
 
