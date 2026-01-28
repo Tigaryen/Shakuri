@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="reveal flex flex-col items-start">
               <div className="mb-8">
-                <AIAvatar prompt="wearing a futuristic cyberpunk suit with glowing cyan lights, tech-focused style" size="md" />
+                <AIAvatar staticImage="/clarity.png" size="md" />
               </div>
               <span className="text-cyan-400 font-black tracking-widest text-[10px] uppercase mb-4 block">PILLAR 02</span>
               <h3 className="text-4xl font-black mb-6 uppercase tracking-tight">End-To-End<br/>Clarity</h3>

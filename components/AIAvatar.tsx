@@ -3,12 +3,37 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleGenAI } from "@google/genai";
 
 interface AIAvatarProps {
-  prompt: string;
+  prompt?: string;
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'hero';
+  staticImage?: string;
 }
 
-export const AIAvatar: React.FC<AIAvatarProps> = ({ prompt, className = '', size = 'md' }) => {
+export const AIAvatar: React.FC<AIAvatarProps> = ({ prompt = '', className = '', size = 'md', staticImage }) => {
+  const sizeClasses = {
+    sm: 'w-24 h-24',
+    md: 'w-48 h-48',
+    lg: 'w-64 h-64',
+    hero: 'w-[300px] h-[300px] md:w-[500px] md:h-[500px]'
+  };
+
+  // If a static image is provided, render it directly
+  if (staticImage) {
+    return (
+      <div className={`${sizeClasses[size]} ${className} relative group`}>
+        <div className="absolute inset-0 bg-shakuri-gradient opacity-20 group-hover:opacity-40 blur-3xl transition-opacity duration-700 rounded-full"></div>
+        <div className="w-full h-full rounded-full border border-white/10 shadow-2xl relative z-10 animate-[float_6s_ease-in-out_infinite] overflow-hidden bg-black/40 backdrop-blur-sm">
+          <img
+            src={staticImage}
+            alt="Roblox Character"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent opacity-50 pointer-events-none"></div>
+        </div>
+      </div>
+    );
+  }
+
   // Use unique key based on prompt to cache different characters
   const cacheKey = `shakuri_avatar_${btoa(prompt).substring(0, 16)}`;
   
@@ -76,13 +101,6 @@ export const AIAvatar: React.FC<AIAvatarProps> = ({ prompt, className = '', size
   useEffect(() => {
     generateImage();
   }, [generateImage]);
-
-  const sizeClasses = {
-    sm: 'w-24 h-24',
-    md: 'w-48 h-48',
-    lg: 'w-64 h-64',
-    hero: 'w-[300px] h-[300px] md:w-[500px] md:h-[500px]'
-  };
 
   if (loading) {
     return (
