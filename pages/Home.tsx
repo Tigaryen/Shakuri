@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-16">
             <div className="reveal flex flex-col items-start">
               <div className="mb-8">
-                <AIAvatar prompt="wearing a stylish streetwear outfit with purple accents, urban cool vibe" size="md" />
+                <AIAvatar staticImage="/culture.png" size="md" />
               </div>
               <span className="text-purple-500 font-black tracking-widest text-[10px] uppercase mb-4 block">PILLAR 01</span>
               <h3 className="text-4xl font-black mb-6 uppercase tracking-tight">Culture<br/>First</h3>
@@ -40,7 +40,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="reveal flex flex-col items-start">
               <div className="mb-8">
-                <AIAvatar prompt="wearing a sharp pink and white luxury fashion outfit, holding a glowing data tablet, success oriented" size="md" />
+                <AIAvatar staticImage="/outcome.png" size="md" />
               </div>
               <span className="text-pink-500 font-black tracking-widest text-[10px] uppercase mb-4 block">PILLAR 03</span>
               <h3 className="text-4xl font-black mb-6 uppercase tracking-tight">Measurable<br/>Outcomes</h3>
