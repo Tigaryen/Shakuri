@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
         onClick={() => scrollTo('contact')}
         className="bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
       >
-        GET STARTED
+        Speak to the team
       </button>
     </nav>
   );
