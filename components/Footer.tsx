@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Contact</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
               <li><a href="mailto:hello@shakuristudios.com" className="hover:text-white transition-colors">hello@shakuristudios.com</a></li>
-              <li>London / Manchester / Dubai</li>
+              <li>Manchester / London</li>
             </ul>
           </div>
           <div className="space-y-4">
