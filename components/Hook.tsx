@@ -24,8 +24,8 @@ export const Hook: React.FC = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl group-hover:bg-cyan-500/20 transition-all"></div>
             <div className="relative z-10">
               <span className="text-xs font-black tracking-[0.3em] uppercase text-cyan-400 mb-4 block">PLATFORM SCALE</span>
-              <h3 className="text-6xl md:text-8xl font-black tracking-tighter mb-2 text-gradient">112M+</h3>
-              <p className="text-xl font-bold text-gray-400 leading-tight">Daily Active Users craving immersive brand stories.</p>
+              <h3 className="text-6xl md:text-8xl font-black tracking-tighter mb-2 text-gradient">151M+</h3>
+              <p className="text-xl font-bold text-gray-400 leading-tight">Daily Active Users who don&apos;t consume content, they immerse in it.</p>
             </div>
           </div>
 
