@@ -24,7 +24,7 @@ const serviceList = [
 ];
 
 interface ServicesProps {
-  heading?: string;
+  heading?: React.ReactNode;
   subheading?: string;
   /** The homepage drops the three cards; /services keeps them below the hub. */
   showCards?: boolean;

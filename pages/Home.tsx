@@ -55,7 +55,7 @@ export const Home: React.FC = () => {
 
       <div id="services" className="reveal">
         <Services
-          heading="One Platform. Endless Possibilities."
+          heading={<>One Platform. <span className="text-gradient">Endless Possibilities.</span></>}
           subheading="Everything you need to build global fandom, commercial growth and create real-world outcomes"
           showCards={false}
         />
