@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
 
             <span className="relative z-10 text-black group-hover:scale-110 transition-transform duration-500 inline-block">
-              Explore What's Possible
+              Meet Your Fans Where They Are
             </span>
           </button>
         </div>
