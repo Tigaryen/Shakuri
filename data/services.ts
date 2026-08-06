@@ -30,7 +30,7 @@ export const services: Service[] = [
     image: '/services/custom-worlds.webp',
     alt: 'A custom-built branded Roblox world',
     width: 1400,
-    height: 1132,
+    height: 1050,
     eyebrow: 'Owned world',
     title: 'Custom Experiences',
     duration: '8–12+ weeks',
