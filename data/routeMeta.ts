@@ -21,9 +21,9 @@ export const routeMeta: RouteMeta[] = [
   {
     path: '/',
     file: 'index.html',
-    title: 'Shakuri Studios | Roblox & Fortnite Brand Activation Agency',
+    title: 'Roblox Brand Activation Agency | Shakuri Studios',
     description:
-      'Shakuri Studios is the end-to-end Roblox and Fortnite agency for global brands. Strategy, build, and awareness campaigns that deliver measurable outcomes.',
+      'Roblox-native end-to-end brand activation agency. We design, build and measure Roblox experiences that turn global audiences into commercial growth and real-world outcomes.',
   },
   {
     path: '/services',
