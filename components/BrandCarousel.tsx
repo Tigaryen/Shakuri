@@ -49,13 +49,21 @@ export const BrandCarousel: React.FC = () => {
     </section>
 
     {/* Proof bar */}
-    <section className="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+    <section className="bg-black text-white py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto reveal">
-        <div className="grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center px-4 py-10 md:py-2">
-              <h3 className="text-7xl md:text-9xl font-black tracking-tighter text-gradient">{stat.value}</h3>
-              <p className="mt-4 text-sm font-black uppercase tracking-[0.25em] text-gray-500">{stat.label}</p>
+            <div key={stat.label} className="relative group">
+              {/* Gradient glow behind the box */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-2 rounded-[1.5rem] bg-shakuri-gradient opacity-25 blur-3xl transition-opacity duration-500 group-hover:opacity-50"
+              ></div>
+
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 px-8 py-12 text-center">
+                <h3 className="text-6xl md:text-8xl font-black tracking-tighter text-gradient">{stat.value}</h3>
+                <p className="mt-4 text-sm font-black uppercase tracking-[0.25em] text-gray-400">{stat.label}</p>
+              </div>
             </div>
           ))}
         </div>

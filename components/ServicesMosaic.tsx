@@ -47,6 +47,15 @@ export const ServicesMosaic: React.FC = () => {
             </Link>
           ))}
         </div>
+
+        <div className="reveal mt-16 text-center">
+          <Link
+            to="/services"
+            className="btn-glow-multi inline-block bg-shakuri-gradient px-12 py-6 rounded-[2rem] text-xl font-black uppercase tracking-[0.2em] text-white transition-all active:scale-95"
+          >
+            Learn more
+          </Link>
+        </div>
       </div>
     </section>
   );

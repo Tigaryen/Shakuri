@@ -23,16 +23,27 @@ const serviceList = [
   }
 ];
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+  heading?: string;
+  subheading?: string;
+  /** The homepage drops the three cards; /services keeps them below the hub. */
+  showCards?: boolean;
+}
+
+export const Services: React.FC<ServicesProps> = ({
+  heading = 'OUR SERVICES',
+  subheading = 'Everything you need to successfully launch and scale.',
+  showCards = true,
+}) => {
   return (
     <section id="services" className="py-24 px-6 md:px-12 bg-[#050505] relative">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-6">OUR SERVICES</h2>
-          <p className="text-2xl text-gray-500 max-w-xl font-medium leading-relaxed">Everything you need to successfully launch and scale.</p>
+        <div className={showCards ? 'mb-20' : ''}>
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-6">{heading}</h2>
+          <p className="text-2xl text-gray-500 max-w-xl font-medium leading-relaxed">{subheading}</p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-10">
+
+        {showCards && <div className="grid md:grid-cols-3 gap-10">
           {serviceList.map((service, idx) => (
             <div 
               key={idx}
@@ -47,7 +58,7 @@ export const Services: React.FC = () => {
               </p>
             </div>
           ))}
-        </div>
+        </div>}
       </div>
     </section>
   );

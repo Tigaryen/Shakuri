@@ -54,7 +54,11 @@ export const Home: React.FC = () => {
       </div>
 
       <div id="services" className="reveal">
-        <Services />
+        <Services
+          heading="One Platform. Endless Possibilities."
+          subheading="Everything you need to build global fandom, commercial growth and create real-world outcomes"
+          showCards={false}
+        />
       </div>
 
       <ServicesMosaic />
