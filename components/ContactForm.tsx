@@ -93,7 +93,7 @@ export const ContactForm: React.FC = () => {
             onClick={() => setFormOpen((open) => !open)}
             aria-expanded={formOpen}
             aria-controls="contact-form-panel"
-            className="btn-glow-multi bg-shakuri-gradient text-white font-black px-10 py-5 rounded-[2rem] text-lg tracking-[0.2em] uppercase transition-all active:scale-95"
+            className="btn-glow-multi bg-shakuri-gradient text-white font-black px-6 sm:px-10 py-4 sm:py-5 rounded-[2rem] text-base sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all active:scale-95"
           >
             Send a message
           </button>
@@ -101,7 +101,7 @@ export const ContactForm: React.FC = () => {
             href="https://calendar.app.google/vsKkUn6DJqfwNri88"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/5 border border-white/20 text-white font-black px-10 py-5 rounded-[2rem] text-lg tracking-[0.2em] uppercase transition-all active:scale-95 hover:bg-white/10 hover:border-white/40 text-center"
+            className="bg-white/5 border border-white/20 text-white font-black px-6 sm:px-10 py-4 sm:py-5 rounded-[2rem] text-base sm:text-lg tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all active:scale-95 hover:bg-white/10 hover:border-white/40 text-center"
           >
             Book a call
           </a>

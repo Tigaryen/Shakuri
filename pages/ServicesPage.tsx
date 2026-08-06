@@ -85,7 +85,7 @@ export const ServicesPage: React.FC = () => {
                       onClick={() => setFormulaOpen((open) => !open)}
                       aria-expanded={formulaOpen}
                       aria-controls="integration-formula"
-                      className="btn-glow-multi mt-8 inline-flex items-center gap-3 rounded-[1.5rem] bg-shakuri-gradient px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-white transition-all active:scale-95"
+                      className="btn-glow-multi mt-8 inline-flex max-w-full items-center gap-3 rounded-[1.5rem] bg-shakuri-gradient px-5 sm:px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
                     >
                       The Integration Winning Formula
                       <ChevronDown
@@ -166,7 +166,7 @@ export const ServicesPage: React.FC = () => {
           </p>
           <Link
             to="/#contact"
-            className="btn-glow-cyan mx-auto mt-8 flex w-fit items-center gap-4 rounded-2xl bg-white px-12 py-6 text-xl font-black uppercase tracking-[0.2em] text-black transition-all active:scale-90"
+            className="btn-glow-multi mx-auto mt-8 flex w-fit max-w-full items-center justify-center gap-3 sm:gap-4 rounded-2xl bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
           >
             Speak to the team <ArrowRight />
           </Link>

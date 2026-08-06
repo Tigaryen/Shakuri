@@ -17,7 +17,7 @@ export const ValueCTA: React.FC = () => {
             </p>
             <Link
               to="/calculator"
-              className="btn-glow-multi inline-block bg-shakuri-gradient px-12 py-6 rounded-[2rem] text-xl font-black uppercase tracking-[0.2em] text-white transition-all active:scale-95"
+              className="btn-glow-multi inline-block bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
             >
               Run the numbers
             </Link>

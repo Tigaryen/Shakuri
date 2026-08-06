@@ -45,14 +45,14 @@ const Slider: React.FC<SliderProps> = ({ label, value, min, max, step, display, 
       value={value}
       onChange={(e) => onChange(Number(e.target.value))}
       aria-label={label}
-      className="w-full accent-[#00D1FF] cursor-pointer"
+      className="w-full h-11 accent-[#00D1FF] cursor-pointer"
     />
   </div>
 );
 
 const Disclosure: React.FC<{ lines: string[] }> = ({ lines }) => (
   <details className="mt-12 border-t border-white/10 pt-8">
-    <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.2em] text-gray-400 transition-colors hover:text-white [&::-webkit-details-marker]:hidden">
+    <summary className="flex min-h-[44px] items-center cursor-pointer list-none text-xs font-black uppercase tracking-[0.2em] text-gray-400 transition-colors hover:text-white [&::-webkit-details-marker]:hidden">
       How this is calculated
     </summary>
     <div className="mt-6 space-y-3 text-sm font-medium text-gray-500">

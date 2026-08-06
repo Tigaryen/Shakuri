@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col items-center justify-center relative">
           <button 
             onClick={() => scrollTo('contact')}
-            className="group relative px-16 md:px-24 py-7 md:py-9 rounded-2xl font-black text-xl md:text-2xl transition-all duration-500 active:scale-90 hover:scale-110 hover:-translate-y-2 uppercase tracking-[0.2em] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+            className="group relative px-8 sm:px-16 md:px-24 py-6 sm:py-7 md:py-9 rounded-2xl font-black text-base sm:text-xl md:text-2xl max-w-full transition-all duration-500 active:scale-90 hover:scale-110 hover:-translate-y-2 uppercase tracking-[0.2em] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
           >
             {/* Base Background */}
             <div className="absolute inset-0 bg-white group-hover:bg-transparent transition-colors duration-500"></div>

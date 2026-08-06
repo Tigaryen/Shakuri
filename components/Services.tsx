@@ -39,7 +39,7 @@ export const Services: React.FC<ServicesProps> = ({
     <section id="services" className="py-24 px-6 md:px-12 bg-[#050505] relative">
       <div className="max-w-7xl mx-auto">
         <div className={showCards ? 'mb-20' : ''}>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-6">{heading}</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter mb-6">{heading}</h2>
           <p className="text-2xl text-gray-500 max-w-xl font-medium leading-relaxed">{subheading}</p>
         </div>
 

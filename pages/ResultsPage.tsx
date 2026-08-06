@@ -85,7 +85,7 @@ export const ResultsPage: React.FC = () => {
       <section className="px-6 md:px-12 pt-40 pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="reveal mb-16">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-6">
               Measurable <span className="text-gradient">Outcomes</span>
             </h1>
             <p className="text-2xl text-gray-500 max-w-2xl font-medium leading-relaxed">
@@ -198,7 +198,7 @@ export const ResultsPage: React.FC = () => {
           <div className="reveal mt-16 text-center">
             <Link
               to="/#contact"
-              className="btn-glow-multi inline-block bg-shakuri-gradient px-12 py-6 rounded-[2rem] text-xl font-black uppercase tracking-[0.2em] text-white transition-all active:scale-95"
+              className="btn-glow-multi inline-block bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
             >
               Speak to the team <ArrowRight className="inline-block ml-2 -mt-1" />
             </Link>

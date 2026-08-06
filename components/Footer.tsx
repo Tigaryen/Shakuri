@@ -16,11 +16,11 @@ export const Footer: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 gap-12 md:gap-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 md:gap-24">
           <div className="space-y-4">
             <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Contact</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
-              <li><a href="mailto:hello@shakuristudios.com" className="hover:text-white transition-colors">hello@shakuristudios.com</a></li>
+              <li><a href="mailto:hello@shakuristudios.com" className="break-all hover:text-white transition-colors">hello@shakuristudios.com</a></li>
               <li>Manchester / London</li>
             </ul>
           </div>
