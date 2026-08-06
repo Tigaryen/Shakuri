@@ -1,31 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { faqSections, type Faq } from '../data/faqs';
-
-const PAGE_TITLE = 'Roblox for Brands: FAQs | Shakuri Studios';
-const PAGE_DESCRIPTION =
-  'Straight answers on Roblox audience, safety, measurement and cost for brand teams considering the platform.';
-
-// Answer text as a single string, source included, for the structured data.
-const plainAnswer = (faq: Faq) =>
-  faq.source ? `${faq.a} (Source: ${faq.source})` : faq.a;
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqSections.flatMap((section) =>
-    section.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: plainAnswer(faq),
-      },
-    }))
-  ),
-};
 
 const FaqItem: React.FC<{ faq: Faq }> = ({ faq }) => {
   const [open, setOpen] = useState(false);
@@ -64,30 +41,8 @@ const FaqItem: React.FC<{ faq: Faq }> = ({ faq }) => {
 };
 
 export const FaqsPage: React.FC = () => {
-  // Client-side meta. Crawlers that execute JS pick this up; see notes on
-  // pre-rendering if the static tags in index.html need to differ per route.
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = PAGE_TITLE;
-
-    const meta = document.querySelector('meta[name="description"]');
-    const previousDescription = meta?.getAttribute('content') ?? null;
-    meta?.setAttribute('content', PAGE_DESCRIPTION);
-
-    return () => {
-      document.title = previousTitle;
-      if (previousDescription !== null) meta?.setAttribute('content', previousDescription);
-    };
-  }, []);
-
   return (
     <div className="bg-[#050505] px-6 md:px-12 pt-40 pb-32">
-      {/* FAQPage structured data, generated from the same content rendered below */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
       <div className="mx-auto max-w-5xl">
         <div className="reveal mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-none">
