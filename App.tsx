@@ -11,6 +11,7 @@ import { ResultsPage } from './pages/ResultsPage';
 import { CalculatorPage } from './pages/CalculatorPage';
 import { metaForPath } from './data/routeMeta';
 import { FaqsPage } from './pages/FaqsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 const RevealEffect = () => {
   const { pathname } = useLocation();
@@ -86,6 +87,7 @@ const App: React.FC = () => {
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/calculator" element={<CalculatorPage />} />
             <Route path="/faqs" element={<FaqsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
         <Footer />

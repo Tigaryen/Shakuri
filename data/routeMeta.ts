@@ -54,6 +54,13 @@ export const routeMeta: RouteMeta[] = [
       'Straight answers on Roblox audience, safety, measurement and cost for brand teams considering the platform.',
     schema: 'faq',
   },
+  {
+    path: '/privacy',
+    file: 'privacy.html',
+    title: 'Privacy Policy | Shakuri Studios',
+    description:
+      'What Shakuri Studios collects, why, and your rights under UK GDPR. We use no cookies and store nothing on your device.',
+  },
 ];
 
 export const metaForPath = (pathname: string) =>
