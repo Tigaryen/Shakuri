@@ -6,6 +6,7 @@ import { BrandCarousel } from '../components/BrandCarousel';
 import { Services } from '../components/Services';
 import { ServicesMosaic } from '../components/ServicesMosaic';
 import { ProofBar } from '../components/ProofBar';
+import { ValueCTA } from '../components/ValueCTA';
 import { BrandAnimation } from '../components/BrandAnimation';
 import { ContactForm } from '../components/ContactForm';
 import { AIAvatar } from '../components/AIAvatar';
@@ -65,6 +66,8 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <ValueCTA />
 
       <BrandAnimation />
 

@@ -23,8 +23,8 @@ export const Navbar: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const goToServices = () => {
-    navigate('/services');
+  const goTo = (path: string) => {
+    navigate(path);
     setIsMenuOpen(false);
   };
 
@@ -37,16 +37,18 @@ export const Navbar: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-10 text-xs font-black tracking-widest uppercase">
+        <div className="hidden lg:flex gap-7 text-xs font-black tracking-widest uppercase">
           <button onClick={() => scrollTo('about')} className="text-gray-400 hover:text-[#FF8A00] transition-all hover:tracking-[0.25em]">About us</button>
-          <button onClick={goToServices} className="text-gray-400 hover:text-[#BD00FF] transition-all hover:tracking-[0.25em]">How we do it</button>
+          <button onClick={() => goTo('/services')} className="text-gray-400 hover:text-[#BD00FF] transition-all hover:tracking-[0.25em]">Our Services</button>
+          <button onClick={() => goTo('/results')} className="text-gray-400 hover:text-[#FF00CC] transition-all hover:tracking-[0.25em]">The Results</button>
+          <button onClick={() => goTo('/calculator')} className="text-gray-400 hover:text-[#00D1FF] transition-all hover:tracking-[0.25em]">Value Calculator</button>
           <button onClick={() => scrollTo('contact')} className="text-gray-400 hover:text-[#00FF94] transition-all hover:tracking-[0.25em]">Contact</button>
         </div>
 
         {/* Desktop CTA Button */}
         <button
           onClick={() => scrollTo('contact')}
-          className="hidden md:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
+          className="hidden lg:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
         >
           Speak to the team
         </button>
@@ -54,7 +56,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-white p-2 hover:text-cyan-400 transition-colors"
+          className="lg:hidden text-white p-2 hover:text-cyan-400 transition-colors"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -63,7 +65,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transition-all duration-500 md:hidden ${
+        className={`fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transition-all duration-500 lg:hidden ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -77,10 +79,22 @@ export const Navbar: React.FC = () => {
             About us
           </button>
           <button
-            onClick={goToServices}
+            onClick={() => goTo('/services')}
             className="text-3xl font-black tracking-widest uppercase text-white hover:text-[#BD00FF] transition-all"
           >
-            How we do it
+            Our Services
+          </button>
+          <button
+            onClick={() => goTo('/results')}
+            className="text-3xl font-black tracking-widest uppercase text-white hover:text-[#FF00CC] transition-all"
+          >
+            The Results
+          </button>
+          <button
+            onClick={() => goTo('/calculator')}
+            className="text-3xl font-black tracking-widest uppercase text-white hover:text-[#00D1FF] transition-all"
+          >
+            Value Calculator
           </button>
           <button
             onClick={() => scrollTo('contact')}
