@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
         {/* Desktop CTA Button */}
         <button
           onClick={() => scrollTo('contact')}
-          className="hidden lg:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
+          className="hidden md:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
         >
           Speak to the team
         </button>
