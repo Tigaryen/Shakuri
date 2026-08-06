@@ -16,7 +16,7 @@ export const BrandCarousel: React.FC = () => {
       
       <div className="text-center mb-16 px-6 reveal">
         <h3 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
-          The teams behind Roblox's biggest brand worlds.
+          The teams behind Roblox's biggest brand campaigns.
         </h3>
         <p className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-cyan-400 drop-shadow-[0_0_30px_rgba(0,209,255,0.5)]">
           Now building yours.

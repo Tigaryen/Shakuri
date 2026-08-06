@@ -6,7 +6,7 @@ const serviceList = [
   {
     icon: <Target className="w-12 h-12 text-[#FF8A00] group-hover:rotate-[20deg] group-hover:scale-125 transition-all duration-500" />,
     title: 'Strategy',
-    description: 'We craft tailored creative strategies designed to achieve long-lasting and high-impact results on Roblox & Fortnite.',
+    description: 'We craft tailored creative strategies designed to achieve long-lasting and high-impact results on Roblox.',
     hoverClass: 'light-up-orange'
   },
   {
@@ -18,7 +18,7 @@ const serviceList = [
   {
     icon: <Construction className="w-12 h-12 text-[#00FF94] group-hover:-translate-y-2 group-hover:rotate-[-10deg] group-hover:scale-125 transition-all duration-500" />,
     title: 'Build',
-    description: 'Design, develop, and launch your brand\'s own custom-built immersive experience on Roblox and Fortnite.',
+    description: 'Design, develop, and launch your brand\'s own custom-built immersive experience on Roblox.',
     hoverClass: 'light-up-cyan'
   }
 ];

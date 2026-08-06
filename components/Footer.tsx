@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
             <span className="text-3xl font-black tracking-tighter uppercase">SHAKURI</span>
           </div>
           <p className="text-gray-500 max-w-sm font-medium leading-relaxed">
-            Building the future of brand engagement on Roblox and Fortnite. Cultural relevance, measurable outcomes, total clarity.
+            Roblox natives building brand worlds that convert attention into outcomes.
           </p>
         </div>
         

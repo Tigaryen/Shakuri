@@ -38,7 +38,7 @@ export const Hook: React.FC = () => {
         <div className="reveal max-w-4xl mb-16">
           <span className="text-sm font-black tracking-widest uppercase text-cyan-600 mb-4 block">THE SHAKURI EDGE</span>
           <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8 tracking-tighter">
-            Your Roblox-native end-to-end partner.
+            Your <span className="text-gradient">Roblox-native</span> end-to-end partner.
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-600">
             Shakuri architects success for brands who want to thrive on Roblox with <span className="text-black font-bold underline decoration-purple-500 decoration-4">clarity</span>, <span className="text-black font-bold underline decoration-cyan-400 decoration-4">cultural relevance</span>, and <span className="text-black font-bold underline decoration-pink-500 decoration-4">measurable outcomes</span>.
