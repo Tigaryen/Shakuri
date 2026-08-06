@@ -39,14 +39,9 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 space-y-4">
-        <p className="text-xs font-medium leading-relaxed text-gray-600">
-          Shakuri Studios Ltd, registered in England and Wales, company number 17194051.
-          Registered office: 2nd Floor, 47 Lloyd St, Manchester, United Kingdom, M2 5LE.
-        </p>
-        <span className="block text-[10px] font-black uppercase tracking-[0.3em] text-gray-800">
-          &copy; 2025 Shakuri Studios Ltd.
-        </span>
+      <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-gray-800">
+        <span>&copy; 2025 SHAKURI STUDIOS LTD.</span>
+        <span></span>
       </div>
     </footer>
   );
