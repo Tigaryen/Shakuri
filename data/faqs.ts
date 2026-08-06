@@ -86,6 +86,18 @@ export const faqSections: FaqSection[] = [
         a: 'Yes. Our rewards technology connects in-game actions to real-world outcomes: email and presale sign-ups, loyalty enrolment, discount redemption, app installs and store visits. An anonymous player becomes a verified, contactable customer in your CRM.',
       },
       {
+        q: 'Can a Roblox experience make money, or is it purely a marketing cost?',
+        a: 'It can do both. The same world can earn through in-experience purchases, Roblox\u2019s engagement-based payouts, immersive ad placements, digital ticketing and memberships, and virtual merchandise. Most brands plan it as a marketing investment and are surprised by the commercial tail. We model the realistic streams for your category before you commit.',
+      },
+      {
+        q: 'What revenue streams are actually available to us?',
+        a: 'It depends on your build and category, but broadly: UGC and avatar item sales, in-experience purchases, sponsorship inventory inside your own world, event-day passes and virtual ticketing, membership unlocks, and Roblox\u2019s own creator payouts based on engagement. Live event experiences in particular can carry tiered sponsorship from day one.',
+      },
+      {
+        q: 'How does a Roblox presence feed our other channels?',
+        a: 'Gameplay generates content, content drives discovery, and discovery sends new players back into the experience. It\u2019s a self-reinforcing loop. One children\u2019s entertainment brand runs a dedicated Roblox-gameplay YouTube channel with over 179 million views, built entirely from gameplay footage. Your Roblox presence becomes a content engine for social, not a silo.',
+      },
+      {
         q: 'How does this compare to what we’d spend on social?',
         a: 'Use our calculator to model it against your own numbers. Broadly, you are buying minutes of active participation rather than seconds of passive impression, which is a different unit and usually a better one.',
       },
