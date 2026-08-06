@@ -1,23 +1,19 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { services, mosaicOrder } from '../data/services';
-
-const tiles = mosaicOrder
-  .map((id) => services.find((s) => s.id === id))
-  .filter((s): s is (typeof services)[number] => Boolean(s));
+import { services } from '../data/services';
 
 export const ServicesMosaic: React.FC = () => {
   return (
     <section className="bg-[#050505] px-6 pb-24 md:px-12">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-3 md:auto-rows-[300px] md:grid-cols-2 lg:auto-rows-[335px] lg:grid-cols-3">
-          {tiles.map((service) => (
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
             <Link
               key={service.id}
               to="/services"
               aria-label={`${service.label} — ${service.tagline}`}
-              className={`group relative reveal ${service.aspect} md:aspect-auto ${service.span}`}
+              className={`group relative reveal ${service.aspect} ${service.span}`}
             >
               {/* Gradient bloom from the tile edge on hover */}
               <div
@@ -33,7 +29,7 @@ export const ServicesMosaic: React.FC = () => {
                   height={service.height}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
                 />
 
                 {/* Dark gradient overlay, lightens on hover */}

@@ -1,9 +1,12 @@
 // Single source of truth for the services shown in the homepage bento mosaic
-// and the /services detail cards. Array order is the /services card order.
+// and the /services detail cards. Array order drives both surfaces.
 //
-// `span` / `aspect` drive the bento layout. The source images are either
-// near-square (~1.2:1) or 2:3 portrait — none are wide — so no tile spans two
-// columns on a single row, which would crop them in half.
+// `span` / `aspect` lay out the three-row bento:
+//   row 1  custom worlds (2 cols) | integrations
+//   row 2  live events | phygital store | promotion
+//   row 3  ugc collections (full-width banner)
+// Rows 1 and 2 share a 4:3 tile so their baselines line up; the two-column
+// and full-width tiles stretch to that row height instead of setting their own.
 
 export interface Service {
   id: string;
@@ -35,8 +38,8 @@ export const services: Service[] = [
     alt: 'A custom-built branded Roblox world',
     width: 1400,
     height: 1132,
-    aspect: 'aspect-[5/4]',
-    span: 'md:col-span-2 md:row-span-2',
+    aspect: 'aspect-[16/9] lg:aspect-auto',
+    span: 'md:col-span-2',
     eyebrow: 'Owned world',
     title: 'Custom Experiences',
     duration: '8–12+ weeks',
@@ -51,7 +54,7 @@ export const services: Service[] = [
     alt: 'A brand integrated into an existing Roblox experience',
     width: 1400,
     height: 1137,
-    aspect: 'aspect-[5/4]',
+    aspect: 'aspect-[4/3]',
     span: '',
     eyebrow: 'Built-in audience',
     title: 'Brand Integrations',
@@ -67,7 +70,7 @@ export const services: Service[] = [
     alt: 'A live event recreated as a playable Roblox experience',
     width: 1400,
     height: 1122,
-    aspect: 'aspect-[5/4]',
+    aspect: 'aspect-[4/3]',
     span: '',
     eyebrow: 'One event, infinite re-runs',
     title: 'Live Event Experiences',
@@ -83,8 +86,8 @@ export const services: Service[] = [
     alt: 'A virtual branded store connecting digital and physical retail',
     width: 933,
     height: 1400,
-    aspect: 'aspect-[2/3]',
-    span: 'md:row-span-2',
+    aspect: 'aspect-[4/3]',
+    span: '',
     eyebrow: 'Digital meets physical',
     title: 'Phygital Store',
     duration: '4+ weeks',
@@ -99,8 +102,8 @@ export const services: Service[] = [
     alt: 'In-world immersive advertising and creator campaigns',
     width: 933,
     height: 1400,
-    aspect: 'aspect-[2/3]',
-    span: 'md:row-span-2',
+    aspect: 'aspect-[4/3]',
+    span: '',
     eyebrow: 'Cut through the noise',
     title: 'Promotion',
     description:
@@ -114,8 +117,8 @@ export const services: Service[] = [
     alt: 'Branded avatar items and accessories',
     width: 1350,
     height: 1165,
-    aspect: 'aspect-[5/4]',
-    span: '',
+    aspect: 'aspect-[16/9] lg:aspect-[3/1]',
+    span: 'md:col-span-2 lg:col-span-3',
     eyebrow: 'Virtual fits, real hype',
     title: 'UGC Collections',
     description:
@@ -123,15 +126,3 @@ export const services: Service[] = [
   },
 ];
 
-/**
- * Bento placement order — differs from the card order so the tall portrait
- * tiles interlock with the short near-square ones and the grid packs cleanly.
- */
-export const mosaicOrder = [
-  'custom-worlds',
-  'phygital-store',
-  'live-events',
-  'promotion',
-  'brand-integrations',
-  'ugc-collections',
-];
