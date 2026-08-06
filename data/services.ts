@@ -1,12 +1,8 @@
 // Single source of truth for the services shown in the homepage bento mosaic
 // and the /services detail cards. Array order drives both surfaces.
 //
-// `span` / `aspect` lay out the three-row bento:
-//   row 1  custom worlds (2 cols) | integrations
-//   row 2  live events | phygital store | promotion
-//   row 3  ugc collections (full-width banner)
-// Rows 1 and 2 share a 4:3 tile so their baselines line up; the two-column
-// and full-width tiles stretch to that row height instead of setting their own.
+// The mosaic renders every tile as an identical 4:3 cell, so tile shape lives
+// in the component rather than here. Array order is the on-page order.
 
 export interface Service {
   id: string;
@@ -19,9 +15,6 @@ export interface Service {
   /** Intrinsic dimensions, set on the <img> to reserve space and avoid CLS */
   width: number;
   height: number;
-  /** Bento tile shape: aspect ratio on mobile, grid spans from md up */
-  aspect: string;
-  span: string;
   /** Detail card fields */
   eyebrow: string;
   title: string;
@@ -38,8 +31,6 @@ export const services: Service[] = [
     alt: 'A custom-built branded Roblox world',
     width: 1400,
     height: 1132,
-    aspect: 'aspect-[16/9] lg:aspect-auto',
-    span: 'md:col-span-2',
     eyebrow: 'Owned world',
     title: 'Custom Experiences',
     duration: '8–12+ weeks',
@@ -54,8 +45,6 @@ export const services: Service[] = [
     alt: 'A brand integrated into an existing Roblox experience',
     width: 1400,
     height: 1137,
-    aspect: 'aspect-[4/3]',
-    span: '',
     eyebrow: 'Built-in audience',
     title: 'Brand Integrations',
     duration: '4–8+ weeks',
@@ -68,10 +57,8 @@ export const services: Service[] = [
     tagline: 'Turn your biggest day into a playable world',
     image: '/services/live-events.webp',
     alt: 'A live event recreated as a playable Roblox experience',
-    width: 1400,
-    height: 1122,
-    aspect: 'aspect-[4/3]',
-    span: '',
+    width: 1061,
+    height: 796,
     eyebrow: 'One event, infinite re-runs',
     title: 'Live Event Experiences',
     duration: '8–12 weeks',
@@ -86,8 +73,6 @@ export const services: Service[] = [
     alt: 'A virtual branded store connecting digital and physical retail',
     width: 933,
     height: 1400,
-    aspect: 'aspect-[4/3]',
-    span: '',
     eyebrow: 'Digital meets physical',
     title: 'Phygital Store',
     duration: '4+ weeks',
@@ -102,8 +87,6 @@ export const services: Service[] = [
     alt: 'In-world immersive advertising and creator campaigns',
     width: 933,
     height: 1400,
-    aspect: 'aspect-[4/3]',
-    span: '',
     eyebrow: 'Cut through the noise',
     title: 'Promotion',
     description:
@@ -116,9 +99,7 @@ export const services: Service[] = [
     image: '/services/ugc-collections.webp',
     alt: 'Branded avatar items and accessories',
     width: 1350,
-    height: 1165,
-    aspect: 'aspect-[16/9] lg:aspect-[3/1]',
-    span: 'md:col-span-2 lg:col-span-3',
+    height: 1012,
     eyebrow: 'Virtual fits, real hype',
     title: 'UGC Collections',
     description:

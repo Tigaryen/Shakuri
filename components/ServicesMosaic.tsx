@@ -13,7 +13,7 @@ export const ServicesMosaic: React.FC = () => {
               key={service.id}
               to="/services"
               aria-label={`${service.label} — ${service.tagline}`}
-              className={`group relative reveal ${service.aspect} ${service.span}`}
+              className="group relative reveal aspect-[4/3]"
             >
               {/* Gradient bloom from the tile edge on hover */}
               <div
