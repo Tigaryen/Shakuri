@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { ServicesPage } from './pages/ServicesPage';
 import { ResultsPage } from './pages/ResultsPage';
 import { CalculatorPage } from './pages/CalculatorPage';
+import { FaqsPage } from './pages/FaqsPage';
 
 const RevealEffect = () => {
   const { pathname } = useLocation();
@@ -65,6 +66,7 @@ const App: React.FC = () => {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/calculator" element={<CalculatorPage />} />
+            <Route path="/faqs" element={<FaqsPage />} />
           </Routes>
         </main>
         <Footer />

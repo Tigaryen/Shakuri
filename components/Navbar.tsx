@@ -62,6 +62,7 @@ export const Navbar: React.FC = () => {
     { label: 'Our Services', hover: 'hover:text-[#BD00FF]', action: () => goTo('/services') },
     { label: 'The Results', hover: 'hover:text-[#FF00CC]', action: () => goTo('/results') },
     { label: 'Value Calculator', hover: 'hover:text-[#00D1FF]', action: () => goTo('/calculator') },
+    { label: 'FAQs', hover: 'hover:text-[#00FF94]', action: () => goTo('/faqs') },
   ];
 
   return (
