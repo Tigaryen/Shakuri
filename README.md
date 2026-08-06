@@ -4,7 +4,6 @@ A modern React-based marketing website for a Roblox game development and brand m
 
 ## Features
 
-- AI-generated visuals using Google Gemini API
 - Smooth scroll animations and reveal effects
 - Glassmorphism design with custom animations
 - Contact form integration with Formspree
@@ -15,7 +14,6 @@ A modern React-based marketing website for a Roblox game development and brand m
 - **Framework:** React 19 + TypeScript
 - **Build Tool:** Vite 6
 - **Styling:** Tailwind CSS
-- **AI Integration:** Google Generative AI (Gemini)
 - **Icons:** Lucide React
 
 ## Getting Started
@@ -23,7 +21,6 @@ A modern React-based marketing website for a Roblox game development and brand m
 ### Prerequisites
 
 - Node.js 18+
-- A Gemini API key ([get one here](https://aistudio.google.com/apikey))
 
 ### Installation
 
@@ -38,22 +35,12 @@ A modern React-based marketing website for a Roblox game development and brand m
    npm install
    ```
 
-3. Create your environment file:
-   ```bash
-   cp .env.example .env.local
-   ```
-
-4. Add your Gemini API key to `.env.local`:
-   ```
-   GEMINI_API_KEY=your_actual_api_key
-   ```
-
-5. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Scripts
 
@@ -69,7 +56,6 @@ shakuri-studios/
 │   ├── AIAvatar.tsx
 │   ├── BrandAnimation.tsx
 │   ├── BrandCarousel.tsx
-│   ├── BrandHeroVisual.tsx
 │   ├── ContactForm.tsx
 │   ├── Footer.tsx
 │   ├── Hero.tsx
