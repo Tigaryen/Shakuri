@@ -6,8 +6,20 @@ const TV_SPOT_MINUTES = 0.5; // a 30-second spot
 const TIKTOK_VIEW_MINUTES = 0.05; // a 3-second view
 
 const nf = new Intl.NumberFormat('en-GB');
-const formatInt = (n: number) => nf.format(Math.round(n));
-const formatMoney = (n: number) => '$' + nf.format(Math.round(n));
+
+// One decimal below 100 in a unit (24.0M), none above it (480M), so the string
+// stays short enough for the card at every breakpoint.
+const scaled = (n: number) => (n < 100 ? n.toFixed(1) : String(Math.round(n)));
+
+const formatInt = (n: number) => {
+  const abs = Math.abs(n);
+  if (abs >= 1e9) return scaled(n / 1e9) + 'B';
+  if (abs >= 1e6) return scaled(n / 1e6) + 'M';
+  if (abs >= 1e3) return scaled(n / 1e3) + 'K';
+  return nf.format(Math.round(n));
+};
+
+const formatMoney = (n: number) => '$' + formatInt(n);
 
 interface SliderProps {
   label: string;
@@ -51,14 +63,26 @@ const Disclosure: React.FC<{ lines: string[] }> = ({ lines }) => (
   </details>
 );
 
-const Result: React.FC<{ label: string; value: string }> = ({ label, value }) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-8 text-center">
-    <h4 className="text-4xl md:text-5xl font-black tracking-tighter text-gradient leading-none">
-      {value}
-    </h4>
-    <p className="mt-4 text-xs font-black uppercase tracking-[0.2em] text-gray-400">{label}</p>
-  </div>
-);
+const Result: React.FC<{ label: string; value: string }> = ({ label, value }) => {
+  const size =
+    value.length > 8
+      ? 'text-2xl md:text-3xl'
+      : value.length > 6
+      ? 'text-3xl md:text-4xl'
+      : 'text-3xl md:text-5xl';
+
+  return (
+    <div className="min-w-0 overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-6 py-8 text-center">
+      <h4
+        className={`${size} font-black tracking-tighter text-gradient leading-none truncate`}
+        title={value}
+      >
+        {value}
+      </h4>
+      <p className="mt-4 text-xs font-black uppercase tracking-[0.2em] text-gray-400">{label}</p>
+    </div>
+  );
+};
 
 const EarnedMediaValue: React.FC = () => {
   const [visits, setVisits] = useState(1200000);
@@ -116,7 +140,7 @@ const EarnedMediaValue: React.FC = () => {
             />
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-4 min-w-0">
             <Result label="Monthly EMV" value={formatMoney(monthlyEmv)} />
             <Result label="Annual EMV" value={formatMoney(monthlyEmv * 12)} />
             <Result label="Engagement minutes / month" value={formatInt(engagementMinutes)} />
@@ -181,7 +205,7 @@ const Attention: React.FC = () => {
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 min-w-0">
             <Result label="Total engaged minutes" value={formatInt(engagedMinutes)} />
             <Result label="Human years of attention" value={formatInt(humanYears)} />
             <Result label="Equivalent TV 30-second spots" value={formatInt(tvSpots)} />
@@ -212,7 +236,7 @@ export const CalculatorPage: React.FC = () => {
             The Roblox <span className="text-gradient">Value Calculator</span>
           </h1>
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none mb-6 max-w-3xl">
-            What is Roblox attention actually worth?
+            What is Roblox <span className="text-gradient">attention actually worth</span>?
           </h2>
           <p className="text-xl md:text-2xl font-medium leading-relaxed text-gray-400 max-w-3xl">
             Roblox sessions run to minutes, not the seconds of a scrollable ad. These two

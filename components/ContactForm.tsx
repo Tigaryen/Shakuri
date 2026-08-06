@@ -8,6 +8,7 @@ export const ContactForm: React.FC = () => {
   const FORMSPREE_ID = 'xbdoppyo'; 
   
   const [status, setStatus] = useState<FormStatus>('idle');
+  const [formOpen, setFormOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -87,6 +88,31 @@ export const ContactForm: React.FC = () => {
           <p className="text-2xl text-gray-500 font-medium max-w-lg mx-auto">Tell us about your project and let's make magic.</p>
         </div>
 
+        <div className="relative z-10 mb-4 flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={() => setFormOpen((open) => !open)}
+            aria-expanded={formOpen}
+            aria-controls="contact-form-panel"
+            className="btn-glow-multi bg-shakuri-gradient text-white font-black px-10 py-5 rounded-[2rem] text-lg tracking-[0.2em] uppercase transition-all active:scale-95"
+          >
+            Send a message
+          </button>
+          <a
+            href="https://calendar.app.google/vsKkUn6DJqfwNri88"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 border border-white/20 text-white font-black px-10 py-5 rounded-[2rem] text-lg tracking-[0.2em] uppercase transition-all active:scale-95 hover:bg-white/10 hover:border-white/40 text-center"
+          >
+            Book a call
+          </a>
+        </div>
+
+        <div
+          id="contact-form-panel"
+          className={`relative z-10 overflow-hidden transition-all duration-500 ease-out ${
+            formOpen ? 'max-h-[2000px] opacity-100 mt-12' : 'max-h-0 opacity-0'
+          }`}
+        >
         {status === 'error' && (
           <div className="mb-8 p-4 bg-red-500/10 border border-red-500/50 rounded-2xl text-red-500 text-center font-bold">
             There was an issue sending your message. Please check your connection or try again.
@@ -162,6 +188,7 @@ export const ContactForm: React.FC = () => {
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
           </button>
         </form>
+        </div>
       </div>
     </section>
   );
