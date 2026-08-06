@@ -38,6 +38,19 @@ const Slider: React.FC<SliderProps> = ({ label, value, min, max, step, display, 
   </div>
 );
 
+const Disclosure: React.FC<{ lines: string[] }> = ({ lines }) => (
+  <details className="mt-12 border-t border-white/10 pt-8">
+    <summary className="cursor-pointer list-none text-xs font-black uppercase tracking-[0.2em] text-gray-400 transition-colors hover:text-white [&::-webkit-details-marker]:hidden">
+      How this is calculated
+    </summary>
+    <div className="mt-6 space-y-3 text-sm font-medium text-gray-500">
+      {lines.map((line) => (
+        <p key={line}>{line}</p>
+      ))}
+    </div>
+  </details>
+);
+
 const Result: React.FC<{ label: string; value: string }> = ({ label, value }) => (
   <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-8 text-center">
     <h4 className="text-4xl md:text-5xl font-black tracking-tighter text-gradient leading-none">
@@ -64,9 +77,13 @@ const EarnedMediaValue: React.FC = () => {
       ></div>
 
       <div className="relative">
-        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-10">
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
           Earned Media Value
         </h2>
+        <p className="mb-10 text-lg font-medium text-gray-400 max-w-2xl">
+          What your Roblox attention would cost if you bought the equivalent exposure as paid
+          media.
+        </p>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="space-y-10">
@@ -106,10 +123,12 @@ const EarnedMediaValue: React.FC = () => {
           </div>
         </div>
 
-        <p className="mt-12 text-sm text-gray-500 font-medium">
-          Duration-adjusted impressions only, no quality multiplier. Treat as a floor, not a
-          ceiling.
-        </p>
+        <Disclosure
+          lines={[
+            'EMV = visits \u00d7 (session minutes \u00d7 2) \u00d7 CPM \u00f7 1000',
+            'Duration-adjusted impressions only, no quality multiplier. Treat as a floor, not a ceiling.',
+          ]}
+        />
       </div>
     </section>
   );
@@ -132,9 +151,13 @@ const Attention: React.FC = () => {
       ></div>
 
       <div className="relative">
-        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-10">
+        <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
           Attention
         </h2>
+        <p className="mb-10 text-lg font-medium text-gray-400 max-w-2xl">
+          What your audience's time actually amounts to, compared against the channels you already
+          buy.
+        </p>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="space-y-10">
@@ -166,9 +189,15 @@ const Attention: React.FC = () => {
           </div>
         </div>
 
-        <p className="mt-12 text-sm text-gray-500 font-medium">
-          Directional channel comparisons, not guaranteed outcomes.
-        </p>
+        <Disclosure
+          lines={[
+            'Engaged minutes = visits \u00d7 session minutes',
+            'Human years = minutes \u00f7 525,600',
+            'TV 30-second spots = minutes \u00f7 0.5',
+            'TikTok impressions = minutes \u00f7 0.05',
+            'Directional channel comparisons, not guaranteed outcomes.',
+          ]}
+        />
       </div>
     </section>
   );
@@ -179,9 +208,17 @@ export const CalculatorPage: React.FC = () => {
     <div className="bg-[#050505] px-6 md:px-12 pt-40 pb-32">
       <div className="max-w-7xl mx-auto">
         <div className="reveal mb-16">
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter">
+          <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-10">
             The Roblox <span className="text-gradient">Value Calculator</span>
           </h1>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none mb-6 max-w-3xl">
+            What is Roblox attention actually worth?
+          </h2>
+          <p className="text-xl md:text-2xl font-medium leading-relaxed text-gray-400 max-w-3xl">
+            Roblox sessions run to minutes, not the seconds of a scrollable ad. These two
+            calculators price that attention two ways: what it would cost to buy as media, and what
+            it adds up to in human terms. Move the sliders to model your own numbers.
+          </p>
         </div>
 
         <div className="space-y-8">
