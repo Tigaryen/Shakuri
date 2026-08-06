@@ -1,23 +1,37 @@
 
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Logo } from './Logo';
 import { Menu, X } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
+  // Homepage sections only exist on '/', so from any other route we route home
+  // first and let ScrollManager handle the scroll.
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (pathname !== '/') {
+      navigate(`/#${id}`);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const goToServices = () => {
+    navigate('/services');
     setIsMenuOpen(false);
   };
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-12 py-6 bg-black/70 backdrop-blur-xl border-b border-white/10">
-        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="flex items-center gap-3 cursor-pointer group">
+        <button onClick={() => pathname === '/' ? window.scrollTo({top: 0, behavior: 'smooth'}) : navigate('/')} className="flex items-center gap-3 cursor-pointer group">
           <Logo className="w-10 h-10 group-hover:rotate-[360deg] transition-transform duration-1000 rounded-xl" />
           <span className="text-2xl font-black tracking-tighter uppercase group-hover:text-cyan-400 transition-colors">SHAKURI</span>
         </button>
@@ -25,7 +39,7 @@ export const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10 text-xs font-black tracking-widest uppercase">
           <button onClick={() => scrollTo('about')} className="text-gray-400 hover:text-[#FF8A00] transition-all hover:tracking-[0.25em]">About us</button>
-          <button onClick={() => scrollTo('services')} className="text-gray-400 hover:text-[#BD00FF] transition-all hover:tracking-[0.25em]">Services</button>
+          <button onClick={goToServices} className="text-gray-400 hover:text-[#BD00FF] transition-all hover:tracking-[0.25em]">How we do it</button>
           <button onClick={() => scrollTo('contact')} className="text-gray-400 hover:text-[#00FF94] transition-all hover:tracking-[0.25em]">Contact</button>
         </div>
 
@@ -63,10 +77,10 @@ export const Navbar: React.FC = () => {
             About us
           </button>
           <button
-            onClick={() => scrollTo('services')}
+            onClick={goToServices}
             className="text-3xl font-black tracking-widest uppercase text-white hover:text-[#BD00FF] transition-all"
           >
-            Services
+            How we do it
           </button>
           <button
             onClick={() => scrollTo('contact')}

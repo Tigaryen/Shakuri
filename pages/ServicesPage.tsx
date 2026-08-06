@@ -1,79 +1,79 @@
 
 import React from 'react';
-import { Target, Zap, Construction, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { Services } from '../components/Services';
+import { services } from '../data/services';
 
 export const ServicesPage: React.FC = () => {
-  const navigate = useNavigate();
-
-  const services = [
-    {
-      title: "Strategy",
-      icon: <Target className="w-16 h-16 text-cyan-400" />,
-      desc: "We don't just build; we think. We align your brand's core KPIs with the platform's unique culture to ensure every pixel serves a purpose.",
-      details: ["Market Analysis", "Platform Fit", "ROI Forecasting", "Community Insights"]
-    },
-    {
-      title: "Build",
-      icon: <Construction className="w-16 h-16 text-pink-500" />,
-      desc: "Our world-class developers and designers create immersive experiences that users actually want to play. No 'ad-worlds', just fun.",
-      details: ["Environment Design", "UGC Items", "Game Mechanics", "Live Operations"]
-    },
-    {
-      title: "Awareness",
-      icon: <Zap className="w-16 h-16 text-purple-500" />,
-      desc: "A great world is nothing without citizens. We drive high-intent traffic through influencer integration and internal ad tech.",
-      details: ["Influencer Marketing", "Roblox Ads", "Social Amplification", "PR & Hype"]
-    }
-  ];
-
   return (
-    <div className="pt-32 pb-24 bg-black min-h-screen">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="reveal mb-24">
-          <span className="text-cyan-400 font-black tracking-[0.4em] uppercase text-xs mb-4 block">WHAT WE DO</span>
-          <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8">SERVICES</h1>
-          <p className="text-2xl text-gray-400 max-w-2xl font-medium">A comprehensive ecosystem for brands to thrive in the new era of spatial computing and social gaming.</p>
-        </div>
+    <>
+      {/* The homepage services hub, unchanged */}
+      <Services />
 
-        <div className="space-y-32">
-          {services.map((s, i) => (
-            <div key={i} className={`reveal flex flex-col ${i % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-16 items-center`}>
-              <div className="flex-1">
-                <div className="mb-6 p-6 bg-white/5 w-fit rounded-[2rem] border border-white/10">{s.icon}</div>
-                <h2 className="text-5xl font-black mb-6 tracking-tight uppercase">{s.title}</h2>
-                <p className="text-xl text-gray-400 mb-8 leading-relaxed font-medium">{s.desc}</p>
-                <div className="grid grid-cols-2 gap-4">
-                  {s.details.map((detail, d) => (
-                    <div key={d} className="flex items-center gap-2 text-sm font-black tracking-widest text-gray-300 uppercase">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      {detail}
-                    </div>
-                  ))}
+      <section className="bg-[#050505] px-6 pb-32 md:px-12">
+        <div className="mx-auto max-w-7xl space-y-8">
+          {services.map((service, idx) => (
+            <article
+              key={service.id}
+              className="reveal glass group relative overflow-hidden rounded-[3rem] border border-white/10 transition-all duration-500 hover:border-white/20"
+            >
+              {/* Dark gradient wash in the brand ramp */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-shakuri-gradient opacity-[0.07] transition-opacity duration-500 group-hover:opacity-[0.14]"
+              ></div>
+
+              <div className="relative grid items-center gap-10 p-8 md:gap-16 md:p-14 lg:grid-cols-2">
+                <div>
+                  <span className="mb-4 block text-xs font-black uppercase tracking-[0.3em] text-gradient">
+                    {service.eyebrow}
+                  </span>
+                  <h2 className="mb-5 text-4xl font-black uppercase leading-none tracking-tighter text-white md:text-6xl">
+                    {service.title}
+                  </h2>
+                  {service.duration && (
+                    <span className="mb-6 inline-block rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-black uppercase tracking-[0.2em] text-gray-300">
+                      {service.duration}
+                    </span>
+                  )}
+                  <p className="text-lg font-medium leading-relaxed text-gray-400 md:text-xl">
+                    {service.description}
+                  </p>
                 </div>
+
+                <figure
+                  className={`overflow-hidden rounded-[2rem] border border-white/10 bg-[#0a0a0a] ${
+                    idx % 2 !== 0 ? 'lg:order-first' : ''
+                  }`}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    width={service.width}
+                    height={service.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                </figure>
               </div>
-              <div className="flex-1 w-full aspect-video bg-[#0a0a0a] rounded-[3rem] border border-white/10 overflow-hidden relative group">
-                 <div className="absolute inset-0 bg-shakuri-gradient opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                 <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white/10 font-black text-8xl tracking-tighter group-hover:scale-110 transition-transform">{s.title}</span>
-                 </div>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div className="mt-32 reveal bg-white p-16 md:p-24 rounded-[4rem] text-black text-center relative overflow-hidden">
-           <div className="relative z-10">
-             <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none">START YOUR JOURNEY</h2>
-             <button 
-               onClick={() => navigate('/contact')}
-               className="bg-black text-white px-12 py-6 rounded-2xl font-black text-xl hover:scale-110 transition-all uppercase tracking-[0.2em] flex items-center gap-4 mx-auto"
-             >
-               Book a discovery call <ArrowRight />
-             </button>
-           </div>
+        <div className="reveal mx-auto mt-20 max-w-7xl text-center">
+          <p className="text-sm font-medium tracking-wide text-gray-500">
+            Pricing on brief. Scope-dependent.
+          </p>
+          <Link
+            to="/#contact"
+            className="btn-glow-cyan mx-auto mt-8 flex w-fit items-center gap-4 rounded-2xl bg-white px-12 py-6 text-xl font-black uppercase tracking-[0.2em] text-black transition-all active:scale-90"
+          >
+            Speak to the team <ArrowRight />
+          </Link>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };

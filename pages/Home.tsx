@@ -4,6 +4,7 @@ import { Hero } from '../components/Hero';
 import { Hook } from '../components/Hook';
 import { BrandCarousel } from '../components/BrandCarousel';
 import { Services } from '../components/Services';
+import { ServicesMosaic } from '../components/ServicesMosaic';
 import { BrandAnimation } from '../components/BrandAnimation';
 import { ContactForm } from '../components/ContactForm';
 import { AIAvatar } from '../components/AIAvatar';
@@ -55,6 +56,8 @@ export const Home: React.FC = () => {
       <div id="services" className="reveal">
         <Services />
       </div>
+
+      <ServicesMosaic />
 
       <BrandAnimation />
 
