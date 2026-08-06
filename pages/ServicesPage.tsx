@@ -2,16 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Services } from '../components/Services';
 import { services } from '../data/services';
 
 export const ServicesPage: React.FC = () => {
   return (
     <>
-      {/* The homepage services hub, unchanged */}
-      <Services />
-
-      <section className="bg-[#050505] px-6 pb-32 md:px-12">
+      {/* pt clears the fixed navbar, which the removed hub section used to do */}
+      <section className="bg-[#050505] px-6 pb-32 pt-40 md:px-12">
         <div className="mx-auto max-w-7xl space-y-8">
           {services.map((service, idx) => (
             <article
