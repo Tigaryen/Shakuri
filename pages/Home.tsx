@@ -5,6 +5,7 @@ import { Hook } from '../components/Hook';
 import { BrandCarousel } from '../components/BrandCarousel';
 import { Services } from '../components/Services';
 import { ServicesMosaic } from '../components/ServicesMosaic';
+import { ProofBar } from '../components/ProofBar';
 import { BrandAnimation } from '../components/BrandAnimation';
 import { ContactForm } from '../components/ContactForm';
 import { AIAvatar } from '../components/AIAvatar';
@@ -21,6 +22,18 @@ export const Home: React.FC = () => {
       </div>
 
       <BrandCarousel />
+
+      <div id="services" className="reveal">
+        <Services
+          heading={<>One Platform. <span className="text-gradient">Endless Possibilities.</span></>}
+          subheading="Everything you need to build global fandom, commercial growth and create real-world outcomes"
+          showCards={false}
+        />
+      </div>
+
+      <ServicesMosaic />
+
+      <ProofBar />
 
       <div className="bg-black text-white py-32 border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -52,16 +65,6 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div id="services" className="reveal">
-        <Services
-          heading={<>One Platform. <span className="text-gradient">Endless Possibilities.</span></>}
-          subheading="Everything you need to build global fandom, commercial growth and create real-world outcomes"
-          showCards={false}
-        />
-      </div>
-
-      <ServicesMosaic />
 
       <BrandAnimation />
 
