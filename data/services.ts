@@ -44,7 +44,7 @@ export const services: Service[] = [
     image: '/services/brand-integrations.webp',
     alt: 'A brand integrated into an existing Roblox experience',
     width: 1400,
-    height: 1137,
+    height: 1050,
     eyebrow: 'Built-in audience',
     title: 'Brand Integrations',
     duration: '4–8+ weeks',

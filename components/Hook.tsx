@@ -41,7 +41,7 @@ export const Hook: React.FC = () => {
             Your <span className="text-gradient">Roblox-native</span> end-to-end partner.
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-600">
-            Shakuri architects success for brands who want to thrive on Roblox with <span className="text-black font-bold underline decoration-purple-500 decoration-4">clarity</span>, <span className="text-black font-bold underline decoration-cyan-400 decoration-4">cultural relevance</span>, and <span className="text-black font-bold underline decoration-pink-500 decoration-4">measurable outcomes</span>.
+            Shakuri architects success for brands, sports teams and IP holders who want to thrive on Roblox with <span className="text-black font-bold underline decoration-purple-500 decoration-4">clarity</span>, <span className="text-black font-bold underline decoration-cyan-400 decoration-4">cultural relevance</span>, and <span className="text-black font-bold underline decoration-pink-500 decoration-4">measurable outcomes</span>.
           </p>
         </div>
 
