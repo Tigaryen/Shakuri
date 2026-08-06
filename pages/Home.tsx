@@ -20,6 +20,8 @@ export const Home: React.FC = () => {
         <Hook />
       </div>
 
+      <BrandCarousel />
+
       <div className="bg-black text-white py-32 border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-16">
@@ -50,8 +52,6 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <BrandCarousel />
 
       <div id="services" className="reveal">
         <Services />

@@ -16,6 +16,7 @@ const stats = [
 
 export const BrandCarousel: React.FC = () => {
   return (
+    <>
     <section className="py-24 bg-black overflow-hidden relative">
       {/* Background glow for the section */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-pink-500/10 pointer-events-none"></div>
@@ -43,20 +44,23 @@ export const BrandCarousel: React.FC = () => {
         </div>
       </div>
 
-      {/* Proof bar */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 mt-20 reveal">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-white/10 pt-16">
+      {/* Subtle bottom edge gradient to section transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+    </section>
+
+    {/* Proof bar */}
+    <section className="bg-white text-black py-24 md:py-32 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto reveal">
+        <div className="grid grid-cols-1 divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <h3 className="text-5xl md:text-7xl font-black tracking-tighter mb-2 text-gradient">{stat.value}</h3>
-              <p className="text-lg md:text-xl font-bold text-gray-400 leading-tight">{stat.label}</p>
+            <div key={stat.label} className="text-center px-4 py-10 md:py-2">
+              <h3 className="text-7xl md:text-9xl font-black tracking-tighter text-gradient">{stat.value}</h3>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.25em] text-gray-500">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Subtle bottom edge gradient to section transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </section>
+    </>
   );
 };
