@@ -66,6 +66,19 @@ export const services: Service[] = [
       "We turn a live event, match, concert or premiere into a persistent Roblox world. Fans who couldn't get a ticket watch together inside the game, and every real-world moment triggers drops, reactions and rewards.",
   },
   {
+    id: 'promotion',
+    label: 'Promotion',
+    tagline: 'Immersive ads and creator campaigns that land',
+    image: '/services/promotion.webp',
+    alt: 'In-world immersive advertising and creator campaigns',
+    width: 933,
+    height: 1400,
+    eyebrow: 'Cut through the noise',
+    title: 'Promotion',
+    description:
+      'Tailored campaigns, ad buying and influencer partnerships. From native 3D immersive ads and in-world billboards to creator-led campaigns with the Roblox stars your audience already follows. We plan, buy, optimise and report on the whole funnel.',
+  },
+  {
     id: 'phygital-store',
     label: 'Phygital Store',
     tagline: 'A virtual store that drives real-world purchase',
@@ -78,19 +91,6 @@ export const services: Service[] = [
     duration: '4+ weeks',
     description:
       'A fully integrated virtual store connecting your digital and physical worlds. Fans browse exclusive drops, earn loyalty points on every purchase and redeem rewards from their couch or inside your venue.',
-  },
-  {
-    id: 'promotion',
-    label: 'Promotion',
-    tagline: 'Immersive ads and creator campaigns that land',
-    image: '/services/promotion.webp',
-    alt: 'In-world immersive advertising and creator campaigns',
-    width: 933,
-    height: 1400,
-    eyebrow: 'Cut through the noise',
-    title: 'Promotion',
-    description:
-      'Tailored campaigns, ad buying and influencer partnerships. From native 3D immersive ads and in-world billboards to creator-led campaigns with the Roblox stars your audience already follows. We plan, buy, optimise and report on the whole funnel.',
   },
   {
     id: 'ugc-collections',
