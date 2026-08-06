@@ -47,8 +47,11 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <>
-      {/* The homepage services hub, unchanged */}
-      <Services />
+      {/* Extra top padding here only: as a page header this sits under the
+          fixed navbar, where the section's own py-24 leaves it too tight. */}
+      <div className="bg-[#050505] pt-16">
+        <Services />
+      </div>
 
       <section className="bg-[#050505] px-6 pb-32 md:px-12">
         <div className="mx-auto max-w-7xl space-y-8">
