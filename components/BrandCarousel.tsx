@@ -2,10 +2,16 @@
 import React from 'react';
 
 const brands = [
-  'Lego', 'Mtn Dew', 'AT&T', 'ORAL-B',
-  'Lavazza', 'Sony', 'WWF',
-  'Lego', 'Mtn Dew', 'AT&T', 'ORAL-B',
-  'Lavazza', 'Sony', 'WWF',
+  'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
+  'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
+  'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
+  'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
+];
+
+const stats = [
+  { value: '700M+', label: 'Plays worldwide' },
+  { value: '850M+', label: 'Impressions' },
+  { value: '120M+', label: 'Engagement hours' },
 ];
 
 export const BrandCarousel: React.FC = () => {
@@ -16,10 +22,10 @@ export const BrandCarousel: React.FC = () => {
       
       <div className="text-center mb-16 px-6 reveal">
         <h3 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
-          The world's biggest brands are on Roblox and Fortnite.
+          The teams behind Roblox's biggest brand worlds.
         </h3>
         <p className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-cyan-400 drop-shadow-[0_0_30px_rgba(0,209,255,0.5)]">
-          Why aren't you?
+          Now building yours.
         </p>
       </div>
 
@@ -32,6 +38,18 @@ export const BrandCarousel: React.FC = () => {
                   {brand}
                 </span>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Proof bar */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 mt-20 reveal">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-white/10 pt-16">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <h3 className="text-5xl md:text-7xl font-black tracking-tighter mb-2 text-gradient">{stat.value}</h3>
+              <p className="text-lg md:text-xl font-bold text-gray-400 leading-tight">{stat.label}</p>
             </div>
           ))}
         </div>
