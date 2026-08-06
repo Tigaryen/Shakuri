@@ -61,7 +61,7 @@ export const Hook: React.FC = () => {
         </div>
 
         <p className="reveal mt-8 text-xs font-medium text-gray-400 tracking-wide">
-          Sources: Roblox Q1 2026 Shareholder Letter; Mece eye-tracking study for Roblox, 2025.
+          Sources: Roblox Q1 2026 Shareholder Letter; MediaScience eye-tracking study for Roblox, 2025.
         </p>
       </div>
     </section>
