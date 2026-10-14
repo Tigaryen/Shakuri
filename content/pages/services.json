@@ -3,19 +3,6 @@
   "slots": {
     "services": [
       {
-        "id": "brand-integrations",
-        "label": "Integrations",
-        "tagline": "Drop into games that already have the audience",
-        "image": {
-          "src": "/services/brand-integrations.webp",
-          "alt": "A brand integrated into an existing Roblox experience"
-        },
-        "eyebrow": "Built-in audience",
-        "title": "Brand Integrations",
-        "duration": "4–8+ weeks",
-        "description": "Inccccctegrate seamlessly into experiences that already have the audience. We connect you to the right in-game events, activations and placements, so you reach millions without building from scratch."
-      },
-      {
         "id": "custom-worlds",
         "label": "Custom Worlds",
         "tagline": "Your always-on owned world, built from scratch",
@@ -27,6 +14,19 @@
         "title": "Custom Experiences",
         "duration": "8–12+ weeks",
         "description": "A living, breathing world your audience never wants to leave. Built from scratch, user-first, engineered for recurring impact and long-term value rather than a one-off spike. This is your always-on home on the platform, not a pop-up."
+      },
+      {
+        "id": "brand-integrations",
+        "label": "Integrations",
+        "tagline": "Drop into games that already have the audience",
+        "image": {
+          "src": "/services/brand-integrations.webp",
+          "alt": "A brand integrated into an existing Roblox experience"
+        },
+        "eyebrow": "Built-in audience",
+        "title": "Brand Integrations",
+        "duration": "4–8+ weeks",
+        "description": "Integrate seamlessly into experiences that already have the audience. We connect you to the right in-game events, activations and placements, so you reach millions without building from scratch."
       },
       {
         "id": "live-events",
