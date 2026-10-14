@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -10,13 +9,24 @@ const brands = [
   'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
 ];
 
-export const BrandCarousel: React.FC = () => {
+interface BrandCarouselProps {
+  /** Homepage: tagline and How We Work button, no scrolling brand strip. */
+  variant?: 'home' | 'how-we-work';
+}
+
+// One tagline, two placements. On the homepage it is a standalone black band
+// with the How We Work button; on /how-we-work it sits under the network
+// diagram, shows the scrolling brands and borrows that page's background.
+export const BrandCarousel: React.FC<BrandCarouselProps> = ({ variant = 'home' }) => {
+  const isHome = variant === 'home';
+
   return (
-    <section className="py-24 bg-black overflow-hidden relative">
-      {/* Background glow for the section */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-pink-500/10 pointer-events-none"></div>
-      
-      <div className="text-center mb-16 px-6 reveal">
+    <section className={`py-24 overflow-hidden relative ${isHome ? 'bg-black' : ''}`}>
+      {isHome && (
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-pink-500/10 pointer-events-none"></div>
+      )}
+
+      <div className={`relative text-center px-6 reveal ${isHome ? '' : 'mb-16'}`}>
         <h3 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
           The teams behind Roblox's biggest brand campaigns.
         </h3>
@@ -25,31 +35,37 @@ export const BrandCarousel: React.FC = () => {
         </p>
       </div>
 
-      <div className="relative flex">
-        <div className="flex animate-scroll whitespace-nowrap gap-8 md:gap-12 items-center py-4">
-          {brands.map((brand, idx) => (
-            <div key={idx} className="border-beam-card cursor-pointer group">
-              <div className="border-beam-content bg-[#121212] px-10 py-5 rounded-full relative z-10 transition-all duration-300 group-hover:bg-[#1a1a1a]">
-                <span className="text-2xl md:text-4xl font-black text-white/60 transition-all duration-500 uppercase select-none group-hover:text-white group-hover:drop-shadow-[0_0_20px_rgba(0,209,255,0.8)]">
-                  {brand}
-                </span>
+      {!isHome && (
+        <div className="relative flex">
+          <div className="flex animate-scroll whitespace-nowrap gap-8 md:gap-12 items-center py-4">
+            {brands.map((brand, idx) => (
+              <div key={idx} className="border-beam-card cursor-pointer group">
+                <div className="border-beam-content bg-[#121212] px-10 py-5 rounded-full relative z-10 transition-all duration-300 group-hover:bg-[#1a1a1a]">
+                  <span className="text-2xl md:text-4xl font-black text-white/60 transition-all duration-500 uppercase select-none group-hover:text-white group-hover:drop-shadow-[0_0_20px_rgba(0,209,255,0.8)]">
+                    {brand}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="relative z-10 mt-14 flex justify-center px-6 reveal">
-        <Link
-          to="/how-we-work"
-          className="btn-glow-multi inline-flex max-w-full items-center gap-3 bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
-        >
-          How We Work <ArrowRight className="w-5 h-5 shrink-0" />
-        </Link>
-      </div>
+      {isHome && (
+        <>
+          <div className="relative z-10 mt-14 flex justify-center px-6 reveal">
+            <Link
+              to="/how-we-work"
+              className="btn-glow-multi inline-flex max-w-full items-center gap-3 bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
+            >
+              How We Work <ArrowRight className="w-5 h-5 shrink-0" />
+            </Link>
+          </div>
 
-      {/* Subtle bottom edge gradient to section transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+          {/* Subtle bottom edge gradient to section transition */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+        </>
+      )}
     </section>
   );
 };

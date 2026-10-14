@@ -11,6 +11,7 @@ import {
   Layers,
   type LucideIcon,
 } from 'lucide-react';
+import { BrandCarousel } from '../components/BrandCarousel';
 
 // In-house capabilities: the dark pills on the inner ring.
 const inHouse = [
@@ -206,7 +207,11 @@ export const HowWeWorkPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="reveal relative mt-24 text-center">
+      <div className="relative -mx-6 md:-mx-12 mt-16 md:mt-24">
+        <BrandCarousel variant="how-we-work" />
+      </div>
+
+      <div className="reveal relative mt-8 text-center">
         <p className="mb-8 text-xl font-medium text-gray-400">
           Tell us what you want to build and we’ll assemble the team.
         </p>
