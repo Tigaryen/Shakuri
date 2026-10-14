@@ -2,9 +2,9 @@
 import React from 'react';
 import home from '../content/pages/home.json';
 
-const stats = home.slots['proof.stats'];
 
 export const ProofBar: React.FC = () => {
+  const stats = home.slots['proof.stats'];
   return (
     <section className="bg-black text-white py-24 md:py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto reveal">

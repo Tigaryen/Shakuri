@@ -4,7 +4,9 @@
 //   2. App.tsx, which updates the tags on client-side navigation.
 // Keeping both off one source means the static and runtime tags cannot drift.
 
-import cmsPages from './cmsPages.generated.json';
+import cms from './cms.generated.json';
+import workPage from '../content/pages/work.json';
+import journalPage from '../content/pages/journal.json';
 
 export const SITE_URL = 'https://www.shakuristudios.com';
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
@@ -65,11 +67,19 @@ export const routeMeta: RouteMeta[] = [
   },
 ];
 
-// Pages created by the client in the CMS. Each gets its own static shell (slug.html) so it has
-// the right title in search results and loads pre-rendered like the built-in pages.
-for (const p of cmsPages as { slug: string; title: string; description: string }[]) {
+// Pages created by the client in the CMS. Each gets its own static shell so it has the right title
+// in search results and loads pre-rendered like the built-in pages. Work and Journal only exist on
+// the site once they have at least one published entry.
+for (const p of cms.webpages) {
   routeMeta.push({ path: `/${p.slug}`, file: `${p.slug}.html`, title: p.title, description: p.description });
 }
+const section = (base: string, page: { seo?: Record<string, string>; slots: Record<string, any> }, entries: typeof cms.work) => {
+  if (!entries.length) return;
+  routeMeta.push({ path: `/${base}`, file: `${base}.html`, title: page.seo?.title || `${page.slots.title} | Shakuri Studios`, description: page.seo?.description || page.slots.intro || '' });
+  for (const p of entries) routeMeta.push({ path: `/${base}/${p.slug}`, file: `${base}/${p.slug}.html`, title: p.title, description: p.description });
+};
+section('work', workPage, cms.work);
+section('journal', journalPage, cms.journal);
 
 export const metaForPath = (pathname: string) =>
   routeMeta.find((r) => r.path === pathname) ?? routeMeta[0];

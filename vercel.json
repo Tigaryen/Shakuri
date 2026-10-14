@@ -22,6 +22,22 @@
       "destination": "/privacy.html"
     },
     {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/work/:slug([a-z0-9-]+)",
+      "destination": "/work/:slug.html"
+    },
+    {
+      "source": "/journal",
+      "destination": "/journal.html"
+    },
+    {
+      "source": "/journal/:slug([a-z0-9-]+)",
+      "destination": "/journal/:slug.html"
+    },
+    {
       "source": "/:slug([a-z0-9-]+)",
       "destination": "/:slug.html"
     },

@@ -15,7 +15,9 @@
     "privacy",
     "contact",
     "about",
-    "fonts"
+    "fonts",
+    "work",
+    "journal"
   ],
   "pages": [
     {
@@ -293,6 +295,75 @@
           }
         }
       }
+    },
+    {
+      "id": "work",
+      "label": "Work page",
+      "path": "/work",
+      "seo": true,
+      "fields": {
+        "kicker": {
+          "type": "text",
+          "label": "Small label above the title",
+          "required": false,
+          "max": 40,
+          "section": "Top of page"
+        },
+        "title": {
+          "type": "text",
+          "label": "Page title",
+          "max": 60,
+          "section": "Top of page"
+        },
+        "intro": {
+          "type": "text",
+          "label": "Intro",
+          "max": 300,
+          "section": "Top of page"
+        },
+        "ctaTitle": {
+          "type": "text",
+          "label": "Closing heading",
+          "required": false,
+          "max": 80,
+          "section": "Closing panel",
+          "help": "Shown on this page and under every case study. Leave blank to hide."
+        },
+        "cta": {
+          "type": "link",
+          "label": "Closing button",
+          "required": false,
+          "section": "Closing panel",
+          "help": "e.g. /#contact for the contact form"
+        }
+      }
+    },
+    {
+      "id": "journal",
+      "label": "Journal page",
+      "path": "/journal",
+      "seo": true,
+      "fields": {
+        "kicker": {
+          "type": "text",
+          "label": "Small label above the title",
+          "required": false,
+          "max": 40,
+          "section": "Top of page"
+        },
+        "title": {
+          "type": "text",
+          "label": "Page title",
+          "max": 60,
+          "section": "Top of page"
+        },
+        "intro": {
+          "type": "text",
+          "label": "Intro",
+          "max": 300,
+          "section": "Top of page"
+        }
+      }
     }
   ],
   "siteFields": {
@@ -334,6 +405,139 @@
     }
   },
   "collections": {
+    "case-studies": {
+      "label": "Case studies",
+      "itemLabel": "case study",
+      "path": "work",
+      "sort": "date desc",
+      "fields": {
+        "title": {
+          "type": "text",
+          "label": "Project name",
+          "max": 60
+        },
+        "client": {
+          "type": "text",
+          "label": "Brand / client",
+          "required": false,
+          "max": 40
+        },
+        "kicker": {
+          "type": "text",
+          "label": "Type of project",
+          "required": false,
+          "max": 30,
+          "help": "e.g. Custom world, Live event"
+        },
+        "lede": {
+          "type": "text",
+          "label": "One-paragraph summary",
+          "max": 300,
+          "help": "Shown on the Work page and in Google."
+        },
+        "hero": {
+          "type": "image",
+          "label": "Main image",
+          "required": true
+        },
+        "stats": {
+          "type": "list",
+          "label": "Headline results",
+          "min": 0,
+          "max": 4,
+          "itemLabel": "value",
+          "help": "Real numbers only, e.g. 2.4M visits.",
+          "fields": {
+            "value": {
+              "type": "text",
+              "label": "Number",
+              "max": 12
+            },
+            "label": {
+              "type": "text",
+              "label": "What it measures",
+              "max": 40
+            }
+          }
+        },
+        "did": {
+          "type": "list",
+          "label": "What we did",
+          "min": 0,
+          "max": 8,
+          "itemLabel": "t",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Item",
+              "max": 60
+            }
+          }
+        },
+        "services": {
+          "type": "list",
+          "label": "Service tags",
+          "min": 0,
+          "max": 4,
+          "itemLabel": "t",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Tag",
+              "max": 24
+            }
+          }
+        },
+        "headline": {
+          "type": "text",
+          "label": "Story headline",
+          "required": false,
+          "max": 120
+        },
+        "body": {
+          "type": "rich",
+          "label": "The story"
+        }
+      }
+    },
+    "journal": {
+      "label": "Journal",
+      "itemLabel": "post",
+      "path": "journal",
+      "sort": "date desc",
+      "fields": {
+        "title": {
+          "type": "text",
+          "label": "Title",
+          "max": 90
+        },
+        "category": {
+          "type": "select",
+          "label": "Type",
+          "options": [
+            "News",
+            "Article",
+            "Insight",
+            "Case note"
+          ]
+        },
+        "excerpt": {
+          "type": "text",
+          "label": "Standfirst",
+          "max": 240,
+          "help": "One or two sentences shown on the Journal page and in Google."
+        },
+        "cover": {
+          "type": "image",
+          "label": "Cover image",
+          "required": false
+        },
+        "body": {
+          "type": "rich",
+          "label": "Body"
+        }
+      }
+    },
     "webpages": {
       "label": "Pages",
       "itemLabel": "page",
@@ -477,5 +681,6 @@
         }
       }
     }
-  }
+  },
+  "previewUrl": "https://www.shakuristudios.com"
 }

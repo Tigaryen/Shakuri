@@ -23,11 +23,11 @@ const looks = [
   },
 ];
 
-const stats = c['edge.stats'].map((s, i) => ({ ...looks[i % looks.length], ...s }));
 const underline = ['decoration-purple-500', 'decoration-cyan-400', 'decoration-pink-500'];
-const hl = c['edge.highlights'];
 
 export const Hook: React.FC = () => {
+  const stats = c['edge.stats'].map((s, i) => ({ ...looks[i % looks.length], ...s }));
+  const hl = c['edge.highlights'];
   return (
     <section className="py-24 px-6 md:px-12 bg-white text-black relative overflow-hidden">
       {/* Background decoration */}

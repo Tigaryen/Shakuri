@@ -15,7 +15,10 @@ export interface FaqSection {
 import content from '../content/pages/faqs.json';
 
 // Edited in the CMS (content/pages/faqs.json).
-export const faqSections: FaqSection[] = content.slots.sections.map((sec) => ({
+const build = (): FaqSection[] => content.slots.sections.map((sec) => ({
   title: sec.title,
   faqs: sec.faqs.map((f) => ({ q: f.q, a: f.a, source: f.source || undefined })),
 }));
+export let faqSections: FaqSection[] = build();
+/** Live preview: re-read the content after the CMS swaps in unsaved edits. */
+export const refreshFaqs = () => { faqSections = build(); };

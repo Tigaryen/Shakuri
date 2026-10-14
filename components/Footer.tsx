@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import site from '../content/site.json';
-import { menuPages } from '../data/cmsPages';
+import { menuPages, caseStudies, journalPosts } from '../data/cmsPages';
 
 const c = site.slots;
 
@@ -30,8 +30,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">{menuPages.length ? 'More' : 'Legal'}</h4>
+            <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">{menuPages.length || caseStudies.length || journalPosts.length ? 'More' : 'Legal'}</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
+              {caseStudies.length > 0 && <li><Link to="/work" className="hover:text-white transition-colors">Our Work</Link></li>}
+              {journalPosts.length > 0 && <li><Link to="/journal" className="hover:text-white transition-colors">Journal</Link></li>}
               {menuPages.map((p) => (
                 <li key={p.slug}><Link to={`/${p.slug}`} className="hover:text-white transition-colors">{p.menuLabel}</Link></li>
               ))}

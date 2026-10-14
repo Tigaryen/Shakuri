@@ -1,0 +1,10 @@
+{
+  "seo": {},
+  "slots": {
+    "kicker": "Our work",
+    "title": "Proof, not promises",
+    "intro": "Roblox brand activations we have designed, built and measured, from first brief to launch.",
+    "ctaTitle": "Want results like these?",
+    "cta": { "label": "Start a project", "href": "/#contact" }
+  }
+}

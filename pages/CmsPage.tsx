@@ -10,11 +10,11 @@ import { findCmsPage, type CmsPage as Page } from '../data/cmsPages';
 const paragraphs = (text = '') =>
   text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 
-const SmartLink: React.FC<{ href: string; className: string; children: React.ReactNode }> = ({ href, className, children }) =>
+export const SmartLink: React.FC<{ href: string; className: string; children: React.ReactNode }> = ({ href, className, children }) =>
   href.startsWith('/') ? <Link to={href} className={className}>{children}</Link>
     : <a href={href} className={className} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">{children}</a>;
 
-const Hero: React.FC<{ f: Record<string, any> }> = ({ f }) => (
+export const Hero: React.FC<{ f: Record<string, any> }> = ({ f }) => (
   <div className="reveal mb-16 max-w-4xl">
     {f.kicker && <span className="mb-4 block text-xs font-black uppercase tracking-[0.3em] text-gradient">{f.kicker}</span>}
     <h1 className="mb-6 text-5xl font-black tracking-tighter sm:text-6xl md:text-8xl">{f.title}</h1>
@@ -22,7 +22,7 @@ const Hero: React.FC<{ f: Record<string, any> }> = ({ f }) => (
   </div>
 );
 
-const Closing: React.FC<{ f: Record<string, any> }> = ({ f }) =>
+export const Closing: React.FC<{ f: Record<string, any> }> = ({ f }) =>
   !f.ctaTitle ? null : (
     <section className="bg-[#050505] px-6 pb-24 md:px-12">
       <div className="reveal mx-auto max-w-7xl">

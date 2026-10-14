@@ -130,6 +130,7 @@ async function main() {
       );
     }
 
+    await mkdir(path.dirname(path.join(DIST, route.file)), { recursive: true });
     await writeFile(path.join(DIST, route.file), html);
     const extra = route.schema === 'faq' ? ` + ${faqSchema(faqSections).mainEntity.length}-question FAQPage` : '';
     console.log(`  ${route.path.padEnd(12)} -> dist/${route.file}${extra}`);

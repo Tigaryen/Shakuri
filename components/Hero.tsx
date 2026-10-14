@@ -13,7 +13,8 @@ export const Hero: React.FC = () => {
   };
 
   // Generate varied subtle particles
-  const particles = [...Array(40)].map((_, i) => {
+  // Generated once per visit, so live-preview re-renders don't reshuffle them.
+  const particles = React.useMemo(() => [...Array(40)].map((_, i) => {
     const isShape = i % 4 === 0;
     const size = isShape ? Math.random() * 12 + 4 : Math.random() * 2 + 1;
     const duration = 15 + Math.random() * 25;
@@ -44,7 +45,7 @@ export const Hero: React.FC = () => {
         } as any}
       ></div>
     );
-  });
+  }), []);
 
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden pt-32 pb-24 bg-black">

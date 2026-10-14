@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Logo } from './Logo';
-import { menuPages } from '../data/cmsPages';
+import { menuPages, caseStudies, journalPosts } from '../data/cmsPages';
 import site from '../content/site.json';
 import { Menu, X } from 'lucide-react';
 
@@ -62,9 +62,12 @@ export const Navbar: React.FC = () => {
   const navItems = [
     { label: 'Home', hover: 'hover:text-[#FF8A00]', action: goHome },
     { label: 'Our Services', hover: 'hover:text-[#BD00FF]', action: () => goTo('/services') },
+    // Work and Journal appear once the client publishes their first case study / post in the CMS
+    ...(caseStudies.length ? [{ label: 'Our Work', hover: 'hover:text-[#00FF94]', action: () => goTo('/work') }] : []),
     { label: 'The Results', hover: 'hover:text-[#FF00CC]', action: () => goTo('/results') },
     { label: 'Value Calculator', hover: 'hover:text-[#00D1FF]', action: () => goTo('/calculator') },
     { label: 'FAQs', hover: 'hover:text-[#00FF94]', action: () => goTo('/faqs') },
+    ...(journalPosts.length ? [{ label: 'Journal', hover: 'hover:text-[#FF8A00]', action: () => goTo('/journal') }] : []),
     // pages the client created in the CMS and ticked "Show in the menu"
     ...menuPages.map((p) => ({ label: p.menuLabel, hover: 'hover:text-[#00D1FF]', action: () => goTo(`/${p.slug}`) })),
   ];

@@ -27,8 +27,11 @@ import sizes from './imageSizes.json';
 
 // Edited in the CMS (content/pages/services.json). Image sizes reserve space while images load;
 // newly uploaded images fall back to the 4:3 tile ratio.
-export const services: Service[] = content.slots.services.map((s) => {
+const build = (): Service[] => content.slots.services.map((s) => {
   const [width, height] = (sizes as Record<string, number[]>)[s.image.src] || [1400, 1050];
   return { id: s.id, label: s.label, tagline: s.tagline, image: s.image.src, alt: s.image.alt, width, height,
     eyebrow: s.eyebrow, title: s.title, duration: s.duration || undefined, description: s.description };
 });
+export let services: Service[] = build();
+/** Live preview: re-read the content after the CMS swaps in unsaved edits. */
+export const refreshServices = () => { services = build(); };
