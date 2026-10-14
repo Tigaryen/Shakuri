@@ -51,6 +51,13 @@ export const BrandCarousel: React.FC<BrandCarouselProps> = ({ variant = 'home' }
         </div>
       )}
 
+      {!isHome && (
+        <p className="relative mx-auto mt-10 max-w-2xl px-6 text-center text-xs font-medium leading-relaxed text-gray-500">
+          Projects delivered by members of our specialist development partner network, featured
+          with their permission. All trademarks are the property of their respective owners.
+        </p>
+      )}
+
       {isHome && (
         <>
           <div className="relative z-10 mt-14 flex justify-center px-6 reveal">
