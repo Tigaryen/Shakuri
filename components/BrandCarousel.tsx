@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const brands = [
-  'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
+  'Hasbro', 'Netflix', 'Max Mara', 'Spin Master',
   'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
-  'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
+  'Hasbro', 'Netflix', 'Max Mara', 'Spin Master',
   'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
 ];
 
