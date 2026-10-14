@@ -189,7 +189,7 @@ body {
     transform: scale(1.03);
 }
 
-/* "How We Work" CTA in the brand carousel: a pink-to-violet pill inside a
+/* "How We Work" CTA in the brand carousel: a deep violet pill inside a
    spinning spectrum ring, so it reads as the loudest thing in the section. */
 .rainbow-ring-btn {
     position: relative;
@@ -198,7 +198,7 @@ body {
     border-radius: 9999px;
     overflow: hidden;
     isolation: isolate;
-    box-shadow: 0 0 40px -6px rgba(255, 0, 204, 0.55), 0 0 60px -10px rgba(0, 209, 255, 0.45);
+    box-shadow: 0 0 36px -8px rgba(189, 0, 255, 0.45), 0 0 56px -12px rgba(0, 209, 255, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .rainbow-ring-btn::before {
@@ -216,7 +216,7 @@ body {
 }
 .rainbow-ring-btn:hover {
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 0 56px -4px rgba(255, 0, 204, 0.7), 0 0 80px -8px rgba(0, 209, 255, 0.6);
+    box-shadow: 0 0 48px -6px rgba(189, 0, 255, 0.6), 0 0 72px -10px rgba(0, 209, 255, 0.5);
 }
 .rainbow-ring-btn:active {
     transform: scale(0.97);
@@ -228,7 +228,7 @@ body {
     min-height: 44px;
     padding: 1.1rem 2.75rem;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #FF00CC 0%, #BD00FF 100%);
+    background: linear-gradient(135deg, #4C2A85 0%, #2E2163 100%);
     color: #fff;
     font-weight: 800;
     font-size: 1.125rem;
