@@ -27,7 +27,7 @@ function collect(obj, prefix, texts, images) {
     if (typeof v === 'string') addText(key, v, texts);
     else if (Array.isArray(v)) v.forEach((item, i) => { if (item && typeof item === 'object') collect(item, `${key}[${i}]`, texts, images); else if (typeof item === 'string') addText(`${key}[${i}]`, item, texts); });
     else if (v && typeof v === 'object') {
-      if ('src' in v) { if (v.src) images.set(srcPath(v.src), key); if (v.alt) addText(key, v.alt, texts); }
+      if ('src' in v) { if (v.src) images.set(srcPath(v.src), key); if (v.cmsSrc) images.set(srcPath(v.cmsSrc), key); if (v.alt) addText(key, v.alt, texts); }
       else if ('label' in v && 'href' in v) addText(key, v.label, texts);
       else collect(v, key, texts, images);
     }
@@ -67,6 +67,22 @@ function highlight(key) {
   if (els[0]) els[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
 }
 
+/** New uploads aren't on the live site until the next publish, so the CMS sends the files themselves. */
+const blobUrls = new Map();
+function useLocalImages(m) {
+  const files = m.images || {};
+  if (!Object.keys(files).length) return;
+  const urlFor = src => { if (!blobUrls.has(src) && files[src] instanceof Blob) blobUrls.set(src, URL.createObjectURL(files[src])); return blobUrls.get(src); };
+  const seen = new Set();
+  const walk = v => {
+    if (!v || typeof v !== 'object' || seen.has(v)) return; seen.add(v);
+    if (Array.isArray(v)) { v.forEach(walk); return; }
+    if (typeof v.src === 'string' && files[v.src]) { const u = urlFor(v.src); if (u) { v.cmsSrc = v.src; v.src = u; } }
+    for (const k of Object.keys(v)) if (k !== 'images') walk(v[k]);
+  };
+  for (const k of ['slots', 'site', 'item', 'fields']) walk(m[k]);
+}
+
 export function startPreview({ origins, apply }) {
   const allowed = new Set(origins);
   let parentOrigin = null, lastFields = null, lastKey = null;
@@ -83,7 +99,7 @@ export function startPreview({ origins, apply }) {
     if (!allowed.has(e.origin) || e.source !== window.parent || !m || m.source !== 'cms-admin') return;
     parentOrigin = e.origin;
     if (m.type === 'hello') send({ type: 'ready' });
-    if (m.type === 'data') { try { apply(m); } catch (err) { console.error('cms preview', err); } lastFields = m.fields || null; refresh(); }
+    if (m.type === 'data') { useLocalImages(m); try { apply(m); } catch (err) { console.error('cms preview', err); } lastFields = m.fields || null; refresh(); }
     if (m.type === 'highlight') { lastKey = m.key; highlight(m.key); }
   });
 
