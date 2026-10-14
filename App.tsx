@@ -120,8 +120,9 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-      <Analytics />
-      <SpeedInsights />
+      {/* editing in the CMS preview isn't a real visit */}
+      {!isCmsPreview && <Analytics />}
+      {!isCmsPreview && <SpeedInsights />}
     </BrowserRouter>
   );
 };
