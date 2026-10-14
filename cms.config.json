@@ -1,0 +1,481 @@
+{
+  "name": "Shakuri Studios",
+  "mode": "data",
+  "liveUrl": "https://www.shakuristudios.com",
+  "publicDir": "public",
+  "uploadsDir": "public/uploads",
+  "mediaDirs": [
+    "public"
+  ],
+  "reserved": [
+    "services",
+    "results",
+    "calculator",
+    "faqs",
+    "privacy",
+    "contact",
+    "about",
+    "fonts"
+  ],
+  "pages": [
+    {
+      "id": "home",
+      "label": "Home",
+      "path": "/",
+      "fields": {
+        "hero.line1": {
+          "type": "text",
+          "label": "Big headline, line 1",
+          "max": 14,
+          "section": "Hero",
+          "help": "Very large type: keep it to one short word."
+        },
+        "hero.line2": {
+          "type": "text",
+          "label": "Big headline, line 2 (gradient)",
+          "max": 14,
+          "section": "Hero"
+        },
+        "hero.sub": {
+          "type": "text",
+          "label": "Line under the headline",
+          "max": 140,
+          "section": "Hero"
+        },
+        "hero.button": {
+          "type": "text",
+          "label": "Button text",
+          "max": 36,
+          "section": "Hero",
+          "help": "Scrolls to the contact form."
+        },
+        "edge.kicker": {
+          "type": "text",
+          "label": "Small label",
+          "max": 30,
+          "section": "The Shakuri edge"
+        },
+        "edge.headBefore": {
+          "type": "text",
+          "label": "Heading: before the gradient words",
+          "max": 30,
+          "section": "The Shakuri edge",
+          "required": false
+        },
+        "edge.headHighlight": {
+          "type": "text",
+          "label": "Heading: gradient words",
+          "max": 30,
+          "section": "The Shakuri edge"
+        },
+        "edge.headAfter": {
+          "type": "text",
+          "label": "Heading: after the gradient words",
+          "max": 40,
+          "section": "The Shakuri edge",
+          "required": false
+        },
+        "edge.intro": {
+          "type": "text",
+          "label": "Paragraph (before the underlined words)",
+          "max": 220,
+          "section": "The Shakuri edge"
+        },
+        "edge.highlights": {
+          "type": "list",
+          "label": "Underlined words",
+          "min": 1,
+          "max": 3,
+          "itemLabel": "t",
+          "section": "The Shakuri edge",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Words",
+              "max": 30
+            }
+          }
+        },
+        "edge.stats": {
+          "type": "list",
+          "label": "Stat cards",
+          "min": 1,
+          "max": 4,
+          "itemLabel": "value",
+          "fields": {
+            "value": {
+              "type": "text",
+              "label": "Number",
+              "max": 12
+            },
+            "label": {
+              "type": "text",
+              "label": "What it means",
+              "max": 80
+            }
+          },
+          "section": "The Shakuri edge"
+        },
+        "edge.sources": {
+          "type": "text",
+          "label": "Sources line",
+          "max": 240,
+          "section": "The Shakuri edge",
+          "required": false
+        },
+        "services.heading": {
+          "type": "text",
+          "label": "Heading",
+          "max": 30,
+          "section": "Services"
+        },
+        "services.highlight": {
+          "type": "text",
+          "label": "Heading: gradient words",
+          "max": 40,
+          "section": "Services"
+        },
+        "services.sub": {
+          "type": "text",
+          "label": "Intro",
+          "max": 200,
+          "section": "Services"
+        },
+        "services.button": {
+          "type": "text",
+          "label": "Button under the tiles",
+          "max": 24,
+          "section": "Services",
+          "help": "The tiles themselves are edited on the Services page."
+        },
+        "proof.stats": {
+          "type": "list",
+          "label": "Big numbers",
+          "min": 1,
+          "max": 3,
+          "itemLabel": "value",
+          "fields": {
+            "value": {
+              "type": "text",
+              "label": "Number",
+              "max": 12
+            },
+            "label": {
+              "type": "text",
+              "label": "What it means",
+              "max": 80
+            }
+          },
+          "section": "Proof"
+        },
+        "value.title": {
+          "type": "text",
+          "label": "Heading",
+          "max": 80,
+          "section": "Value calculator panel"
+        },
+        "value.text": {
+          "type": "text",
+          "label": "Text",
+          "max": 200,
+          "section": "Value calculator panel"
+        },
+        "value.button": {
+          "type": "text",
+          "label": "Button",
+          "max": 24,
+          "section": "Value calculator panel"
+        }
+      }
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "path": "/services",
+      "fields": {
+        "services": {
+          "type": "list",
+          "label": "Services",
+          "min": 1,
+          "max": 12,
+          "itemLabel": "label",
+          "section": "Services",
+          "help": "Shown as tiles on the homepage and as full cards on /services, in this order.",
+          "fields": {
+            "label": {
+              "type": "text",
+              "label": "Tile title",
+              "max": 24
+            },
+            "tagline": {
+              "type": "text",
+              "label": "Tile line",
+              "max": 70
+            },
+            "image": {
+              "type": "image",
+              "label": "Image"
+            },
+            "eyebrow": {
+              "type": "text",
+              "label": "Card label",
+              "max": 40
+            },
+            "title": {
+              "type": "text",
+              "label": "Card title",
+              "max": 40
+            },
+            "duration": {
+              "type": "text",
+              "label": "Timeline (optional)",
+              "max": 20,
+              "required": false
+            },
+            "description": {
+              "type": "text",
+              "label": "Card text",
+              "max": 500
+            },
+            "id": {
+              "type": "slug",
+              "label": "Short name",
+              "help": "Used behind the scenes. Use lowercase-and-hyphens; don't change brand-integrations."
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs",
+      "path": "/faqs",
+      "fields": {
+        "sections": {
+          "type": "list",
+          "label": "FAQ sections",
+          "min": 1,
+          "max": 10,
+          "itemLabel": "title",
+          "section": "FAQs",
+          "help": "Also feeds the FAQ data Google reads, so keep answers accurate.",
+          "fields": {
+            "title": {
+              "type": "text",
+              "label": "Section title",
+              "max": 60
+            },
+            "faqs": {
+              "type": "list",
+              "label": "Questions",
+              "min": 1,
+              "max": 20,
+              "itemLabel": "q",
+              "fields": {
+                "q": {
+                  "type": "text",
+                  "label": "Question",
+                  "max": 160
+                },
+                "a": {
+                  "type": "text",
+                  "label": "Answer",
+                  "max": 1200
+                },
+                "source": {
+                  "type": "text",
+                  "label": "Source (optional)",
+                  "max": 200,
+                  "required": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "siteFields": {
+    "nav.cta": {
+      "type": "text",
+      "label": "Menu button",
+      "max": 28,
+      "section": "Header"
+    },
+    "footer.tagline": {
+      "type": "text",
+      "label": "Footer line",
+      "max": 140,
+      "section": "Footer"
+    },
+    "contact.email": {
+      "type": "text",
+      "label": "Email address",
+      "max": 80,
+      "section": "Footer"
+    },
+    "contact.location": {
+      "type": "text",
+      "label": "Location",
+      "max": 60,
+      "section": "Footer"
+    },
+    "social.linkedin": {
+      "type": "text",
+      "label": "LinkedIn address",
+      "max": 200,
+      "section": "Footer"
+    },
+    "footer.copyright": {
+      "type": "text",
+      "label": "Copyright line",
+      "max": 80,
+      "section": "Footer"
+    }
+  },
+  "collections": {
+    "webpages": {
+      "label": "Pages",
+      "itemLabel": "page",
+      "path": "",
+      "menu": true,
+      "dated": false,
+      "sort": "date asc",
+      "layouts": {
+        "standard": {
+          "label": "Standard page",
+          "description": "Title, intro, an optional big image and flowing text. About, careers, a case in depth.",
+          "fields": {
+            "title": {
+              "type": "text",
+              "label": "Page title",
+              "max": 60
+            },
+            "kicker": {
+              "type": "text",
+              "label": "Small label above the title",
+              "required": false,
+              "max": 40
+            },
+            "intro": {
+              "type": "text",
+              "label": "Intro",
+              "max": 300
+            },
+            "image": {
+              "type": "image",
+              "label": "Big image",
+              "required": false
+            },
+            "body": {
+              "type": "text",
+              "label": "Main text",
+              "max": 8000,
+              "help": "Leave a blank line between paragraphs."
+            },
+            "ctaTitle": {
+              "type": "text",
+              "label": "Closing heading",
+              "required": false,
+              "max": 80,
+              "help": "Leave blank to hide the closing panel."
+            },
+            "cta": {
+              "type": "link",
+              "label": "Closing button",
+              "required": false,
+              "help": "e.g. /#contact for the contact form"
+            },
+            "inMenu": {
+              "type": "boolean",
+              "label": "Show in the menu",
+              "required": false,
+              "help": "Adds this page to the top menu and the footer."
+            },
+            "menuLabel": {
+              "type": "text",
+              "label": "Menu label",
+              "required": false,
+              "max": 24,
+              "help": "Leave blank to use the title."
+            }
+          }
+        },
+        "points": {
+          "label": "Points page",
+          "description": "Title, intro and numbered cards. What you get, how it works, why us.",
+          "fields": {
+            "title": {
+              "type": "text",
+              "label": "Page title",
+              "max": 60
+            },
+            "kicker": {
+              "type": "text",
+              "label": "Small label above the title",
+              "required": false,
+              "max": 40
+            },
+            "intro": {
+              "type": "text",
+              "label": "Intro",
+              "max": 300
+            },
+            "pointsLabel": {
+              "type": "text",
+              "label": "List heading",
+              "max": 40,
+              "required": false
+            },
+            "points": {
+              "type": "list",
+              "label": "Points",
+              "min": 1,
+              "max": 12,
+              "itemLabel": "t",
+              "fields": {
+                "t": {
+                  "type": "text",
+                  "label": "Point",
+                  "max": 60
+                },
+                "d": {
+                  "type": "text",
+                  "label": "Detail",
+                  "required": false,
+                  "max": 260
+                }
+              }
+            },
+            "ctaTitle": {
+              "type": "text",
+              "label": "Closing heading",
+              "required": false,
+              "max": 80,
+              "help": "Leave blank to hide the closing panel."
+            },
+            "cta": {
+              "type": "link",
+              "label": "Closing button",
+              "required": false,
+              "help": "e.g. /#contact for the contact form"
+            },
+            "inMenu": {
+              "type": "boolean",
+              "label": "Show in the menu",
+              "required": false,
+              "help": "Adds this page to the top menu and the footer."
+            },
+            "menuLabel": {
+              "type": "text",
+              "label": "Menu label",
+              "required": false,
+              "max": 24,
+              "help": "Leave blank to use the title."
+            }
+          }
+        }
+      }
+    }
+  }
+}

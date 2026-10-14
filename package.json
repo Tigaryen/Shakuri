@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/build-heads.mjs && node scripts/prerender.mjs",
+    "dev": "node scripts/cms-pages.mjs && vite",
+    "build": "node scripts/cms-pages.mjs && vite build && node scripts/build-heads.mjs && node scripts/prerender.mjs && node scripts/cms-pages.mjs --sitemap",
     "preview": "vite preview"
   },
   "dependencies": {

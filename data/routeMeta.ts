@@ -4,6 +4,8 @@
 //   2. App.tsx, which updates the tags on client-side navigation.
 // Keeping both off one source means the static and runtime tags cannot drift.
 
+import cmsPages from './cmsPages.generated.json';
+
 export const SITE_URL = 'https://www.shakuristudios.com';
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
@@ -62,6 +64,12 @@ export const routeMeta: RouteMeta[] = [
       'What Shakuri Studios collects, why, and your rights under UK GDPR. We use no cookies and store nothing on your device.',
   },
 ];
+
+// Pages created by the client in the CMS. Each gets its own static shell (slug.html) so it has
+// the right title in search results and loads pre-rendered like the built-in pages.
+for (const p of cmsPages as { slug: string; title: string; description: string }[]) {
+  routeMeta.push({ path: `/${p.slug}`, file: `${p.slug}.html`, title: p.title, description: p.description });
+}
 
 export const metaForPath = (pathname: string) =>
   routeMeta.find((r) => r.path === pathname) ?? routeMeta[0];

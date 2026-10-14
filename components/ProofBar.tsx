@@ -1,11 +1,8 @@
 
 import React from 'react';
+import home from '../content/pages/home.json';
 
-const stats = [
-  { value: '700M+', label: 'Plays worldwide' },
-  { value: '850M+', label: 'Impressions' },
-  { value: '120M+', label: 'Engagement hours' },
-];
+const stats = home.slots['proof.stats'];
 
 export const ProofBar: React.FC = () => {
   return (
@@ -13,7 +10,7 @@ export const ProofBar: React.FC = () => {
       <div className="max-w-7xl mx-auto reveal">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stats.map((stat) => (
-            <div key={stat.label} className="relative group">
+            <div key={stat.label + stat.value} className="relative group">
               {/* Gradient glow behind the box */}
               <div
                 aria-hidden="true"

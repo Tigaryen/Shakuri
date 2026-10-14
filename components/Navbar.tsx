@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Logo } from './Logo';
+import { menuPages } from '../data/cmsPages';
+import site from '../content/site.json';
 import { Menu, X } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -63,6 +65,8 @@ export const Navbar: React.FC = () => {
     { label: 'The Results', hover: 'hover:text-[#FF00CC]', action: () => goTo('/results') },
     { label: 'Value Calculator', hover: 'hover:text-[#00D1FF]', action: () => goTo('/calculator') },
     { label: 'FAQs', hover: 'hover:text-[#00FF94]', action: () => goTo('/faqs') },
+    // pages the client created in the CMS and ticked "Show in the menu"
+    ...menuPages.map((p) => ({ label: p.menuLabel, hover: 'hover:text-[#00D1FF]', action: () => goTo(`/${p.slug}`) })),
   ];
 
   return (
@@ -91,7 +95,7 @@ export const Navbar: React.FC = () => {
           onClick={() => scrollTo('contact')}
           className="hidden md:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
         >
-          Speak to the team
+          {site.slots['nav.cta']}
         </button>
 
         {/* Mobile Hamburger Button */}
@@ -136,7 +140,7 @@ export const Navbar: React.FC = () => {
             onClick={() => scrollTo('contact')}
             className="mt-6 min-h-[44px] bg-white text-black px-10 py-4 rounded-full font-black text-sm transition-all active:scale-90 uppercase tracking-widest"
           >
-            Speak to the team
+            {site.slots['nav.cta']}
           </button>
         </div>
       </div>

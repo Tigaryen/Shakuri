@@ -9,6 +9,9 @@ import { ProofBar } from '../components/ProofBar';
 import { ValueCTA } from '../components/ValueCTA';
 import { BrandAnimation } from '../components/BrandAnimation';
 import { ContactForm } from '../components/ContactForm';
+import home from '../content/pages/home.json';
+
+const c = home.slots;
 
 export const Home: React.FC = () => {
   return (
@@ -25,8 +28,8 @@ export const Home: React.FC = () => {
 
       <div id="services" className="reveal">
         <Services
-          heading={<>One Platform. <span className="text-gradient">Endless Possibilities.</span></>}
-          subheading="Everything you need to build global fandom, commercial growth and create real-world measurable impact."
+          heading={<>{c['services.heading']} <span className="text-gradient">{c['services.highlight']}</span></>}
+          subheading={c['services.sub']}
           showCards={false}
         />
       </div>

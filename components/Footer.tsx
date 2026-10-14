@@ -2,6 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
+import site from '../content/site.json';
+import { menuPages } from '../data/cmsPages';
+
+const c = site.slots;
 
 export const Footer: React.FC = () => {
   return (
@@ -13,7 +17,7 @@ export const Footer: React.FC = () => {
             <span className="text-3xl font-black tracking-tighter uppercase">SHAKURI</span>
           </div>
           <p className="text-gray-500 max-w-sm font-medium leading-relaxed">
-            Roblox natives building brand worlds that convert attention into outcomes.
+            {c['footer.tagline']}
           </p>
         </div>
         
@@ -21,26 +25,29 @@ export const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Contact</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
-              <li><a href="mailto:hello@shakuristudios.com" className="break-all hover:text-white transition-colors">hello@shakuristudios.com</a></li>
-              <li>Manchester / London</li>
+              <li><a href={`mailto:${c['contact.email']}`} className="break-all hover:text-white transition-colors">{c['contact.email']}</a></li>
+              <li>{c['contact.location']}</li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Legal</h4>
+            <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">{menuPages.length ? 'More' : 'Legal'}</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
+              {menuPages.map((p) => (
+                <li key={p.slug}><Link to={`/${p.slug}`} className="hover:text-white transition-colors">{p.menuLabel}</Link></li>
+              ))}
               <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Social</h4>
             <ul className="text-gray-500 space-y-2 text-sm font-bold">
-              <li><a href="https://www.linkedin.com/company/shakuristudios/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href={c['social.linkedin']} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.3em] text-gray-800">
-        <span>&copy; 2025 SHAKURI STUDIOS LTD.</span>
+        <span>{c['footer.copyright']}</span>
         <span></span>
       </div>
     </footer>

@@ -1,0 +1,65 @@
+{
+  "seo": {},
+  "slots": {
+    "hero.line1": "GAMING",
+    "hero.line2": "MATTERS",
+    "hero.sub": "Most brands just don’t know where to start. That’s where we come in.",
+    "hero.button": "Meet Your Fans Where They Are",
+    "edge.kicker": "THE SHAKURI EDGE",
+    "edge.headBefore": "Your",
+    "edge.headHighlight": "Roblox-native",
+    "edge.headAfter": "end-to-end partner.",
+    "edge.intro": "Shakuri architects success for brands, sports teams and IP holders who want to thrive on Roblox with",
+    "edge.highlights": [
+      {
+        "t": "clarity"
+      },
+      {
+        "t": "cultural relevance"
+      },
+      {
+        "t": "measurable outcomes"
+      }
+    ],
+    "edge.stats": [
+      {
+        "value": "132M",
+        "label": "Daily active users (Roblox Q1 2026)"
+      },
+      {
+        "value": "2.4 Hrs",
+        "label": "Average daily playtime per user"
+      },
+      {
+        "value": "65%",
+        "label": "Of age-checked users are 13 or older"
+      },
+      {
+        "value": "100x",
+        "label": "More attention to branded content vs social media ads"
+      }
+    ],
+    "edge.sources": "Sources: Roblox Q1 2026 Shareholder Letter; MediaScience eye-tracking study for Roblox, 2025.",
+    "services.heading": "One Platform.",
+    "services.highlight": "Endless Possibilities.",
+    "services.sub": "Everything you need to build global fandom, commercial growth and create real-world measurable impact.",
+    "services.button": "Learn more",
+    "proof.stats": [
+      {
+        "value": "700M+",
+        "label": "Plays worldwide"
+      },
+      {
+        "value": "850M+",
+        "label": "Impressions"
+      },
+      {
+        "value": "120M+",
+        "label": "Engagement hours"
+      }
+    ],
+    "value.title": "What is Roblox attention actually worth?",
+    "value.text": "Put your own numbers in and see the value in minutes, media and real-world outcomes.",
+    "value.button": "Run the numbers"
+  }
+}

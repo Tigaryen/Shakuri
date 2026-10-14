@@ -21,6 +21,7 @@ async function loadData() {
     entryPoints: [path.join(ROOT, 'data', 'routeMeta.ts'), path.join(ROOT, 'data', 'faqs.ts')],
     outdir: CACHE,
     format: 'esm',
+    bundle: true, // inline the CMS content JSON the data files import
     outExtension: { '.js': '.mjs' },
     logLevel: 'silent',
   });

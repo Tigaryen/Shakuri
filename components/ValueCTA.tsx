@@ -1,6 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import home from '../content/pages/home.json';
+
+const c = home.slots;
 
 export const ValueCTA: React.FC = () => {
   return (
@@ -10,16 +13,16 @@ export const ValueCTA: React.FC = () => {
         <div className="bg-shakuri-gradient rounded-[2.5rem] p-[2px]">
           <div className="bg-[#080808] rounded-[2.4rem] px-8 py-14 md:px-16 md:py-20 text-center">
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6">
-              What is Roblox attention actually worth?
+              {c['value.title']}
             </h2>
             <p className="text-xl text-gray-400 font-medium max-w-2xl mx-auto mb-10">
-              Put your own numbers in and see the value in minutes, media and real-world outcomes.
+              {c['value.text']}
             </p>
             <Link
               to="/calculator"
               className="btn-glow-multi inline-block bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
             >
-              Run the numbers
+              {c['value.button']}
             </Link>
           </div>
         </div>

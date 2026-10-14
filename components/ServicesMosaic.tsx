@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services } from '../data/services';
+import home from '../content/pages/home.json';
 
 export const ServicesMosaic: React.FC = () => {
   return (
@@ -53,7 +54,7 @@ export const ServicesMosaic: React.FC = () => {
             to="/services"
             className="btn-glow-multi inline-block bg-shakuri-gradient px-12 py-6 rounded-[2rem] text-xl font-black uppercase tracking-[0.2em] text-white transition-all active:scale-95"
           >
-            Learn more
+            {home.slots['services.button']}
           </Link>
         </div>
       </div>

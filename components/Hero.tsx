@@ -1,5 +1,8 @@
 
 import React from 'react';
+import home from '../content/pages/home.json';
+
+const c = home.slots;
 
 export const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -60,11 +63,11 @@ export const Hero: React.FC = () => {
 
       <div className="z-30 text-center max-w-7xl px-6 relative flex flex-col items-center w-full">
         <h1 className="text-6xl md:text-[11rem] font-black tracking-tighter leading-[0.8] mb-8">
-          <span className="block opacity-90 hover:tracking-normal transition-all duration-700 cursor-default select-none">GAMING</span>
-          <span className="text-gradient block hover:scale-105 hover:brightness-125 transition-all duration-500 cursor-default select-none">MATTERS</span>
+          <span className="block opacity-90 hover:tracking-normal transition-all duration-700 cursor-default select-none">{c['hero.line1']}</span>
+          <span className="text-gradient block hover:scale-105 hover:brightness-125 transition-all duration-500 cursor-default select-none">{c['hero.line2']}</span>
         </h1>
         <p className="text-xl md:text-3xl text-gray-400 font-medium max-w-3xl mx-auto leading-tight mb-16">
-          Most brands just don’t know where to start. That’s where we come in. <br className="hidden md:block" /> 
+          {c['hero.sub']}
         </p>
         
         <div className="flex flex-col items-center justify-center relative">
@@ -90,7 +93,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
 
             <span className="relative z-10 text-black group-hover:scale-110 transition-transform duration-500 inline-block">
-              Meet Your Fans Where They Are
+              {c['hero.button']}
             </span>
           </button>
         </div>
