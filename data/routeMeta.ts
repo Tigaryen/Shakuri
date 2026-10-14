@@ -33,6 +33,13 @@ export const routeMeta: RouteMeta[] = [
       'Custom worlds, brand integrations, live events, phygital stores, UGC and promotion. Ideation to delivery, under one roof.',
   },
   {
+    path: '/how-we-work',
+    file: 'how-we-work.html',
+    title: 'How We Work | Shakuri Studios',
+    description:
+      'In-house creative, strategy, production, marketing and management, backed by specialist development partners by genre and platform across Roblox and Fortnite.',
+  },
+  {
     path: '/results',
     file: 'results.html',
     title: 'Measuring Roblox Campaigns | Shakuri Studios',
