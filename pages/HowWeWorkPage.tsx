@@ -208,7 +208,7 @@ export const HowWeWorkPage: React.FC = () => {
       </div>
 
       <div className="relative -mx-6 md:-mx-12 mt-16 md:mt-24">
-        <BrandCarousel />
+        <BrandCarousel variant="how-we-work" />
       </div>
 
       <div className="reveal relative mt-8 text-center">
