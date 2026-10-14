@@ -2,7 +2,6 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
 import { Hook } from '../components/Hook';
-import { BrandCarousel } from '../components/BrandCarousel';
 import { Services } from '../components/Services';
 import { ServicesMosaic } from '../components/ServicesMosaic';
 import { ProofBar } from '../components/ProofBar';
@@ -20,8 +19,6 @@ export const Home: React.FC = () => {
       <div id="about" className="reveal">
         <Hook />
       </div>
-
-      <BrandCarousel />
 
       <div id="services" className="reveal">
         <Services

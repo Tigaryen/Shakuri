@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 const brands = [
   'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
@@ -10,16 +7,18 @@ const brands = [
   'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
 ];
 
+// Sits under the network diagram on /how-we-work, so it borrows that page's
+// background rather than painting its own black band.
 export const BrandCarousel: React.FC = () => {
   return (
-    <section className="py-24 bg-black overflow-hidden relative">
-      {/* Background glow for the section */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-pink-500/10 pointer-events-none"></div>
-      
-      <div className="text-center mb-16 px-6 reveal">
-        <h3 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
-          The teams behind Roblox's biggest brand campaigns.
-        </h3>
+    <section className="relative overflow-hidden py-24">
+      <div className="relative text-center mb-16 px-6 reveal">
+        <p className="mb-6 text-xs font-black uppercase tracking-[0.3em] text-gray-400">
+          Our partner network
+        </p>
+        <h2 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
+          Proven on household names.
+        </h2>
         <p className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-cyan-400 drop-shadow-[0_0_30px_rgba(0,209,255,0.5)]">
           Now building yours.
         </p>
@@ -38,18 +37,6 @@ export const BrandCarousel: React.FC = () => {
           ))}
         </div>
       </div>
-
-      <div className="relative z-10 mt-14 flex justify-center px-6 reveal">
-        <Link
-          to="/how-we-work"
-          className="btn-glow-multi inline-flex max-w-full items-center gap-3 bg-shakuri-gradient px-8 sm:px-12 py-5 sm:py-6 rounded-[2rem] text-base sm:text-xl font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white transition-all active:scale-95"
-        >
-          How We Work <ArrowRight className="w-5 h-5 shrink-0" />
-        </Link>
-      </div>
-
-      {/* Subtle bottom edge gradient to section transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
     </section>
   );
 };
