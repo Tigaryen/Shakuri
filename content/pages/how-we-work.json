@@ -1,0 +1,87 @@
+{
+  "seo": {},
+  "slots": {
+    "intro.kicker": "How we work",
+    "intro.headBefore": "The right team for",
+    "intro.headHighlight": "every experience.",
+    "intro.lead": "No two gaming experiences are the same. Different genres, audiences, platforms and ambitions require different expertise.",
+    "intro.body": "Shakuri brings together creative, strategy, production, marketing and ongoing management under one roof, supported by a global network of specialist development partners.\n\nFrom immersive brand worlds and competitive sports games to RPGs, simulators and social experiences, we assemble the right combination of talent for each project.\n\nOur partnership model also allows us to deliver experiences across multiple gaming platforms, including Roblox, Fortnite and soon GTA, matching the right technical expertise and creative approach to each platform’s unique opportunities.\n\nThis flexible approach gives brands access to proven expertise across genres and platforms, while Shakuri provides the creative direction, production oversight and strategic thinking that brings everything together.",
+    "diagram.hub": "Direction, oversight and strategy",
+    "diagram.inHouse": [
+      {
+        "t": "Creative"
+      },
+      {
+        "t": "Strategy"
+      },
+      {
+        "t": "Production"
+      },
+      {
+        "t": "Marketing"
+      },
+      {
+        "t": "Management"
+      }
+    ],
+    "diagram.partners": [
+      {
+        "t": "Roblox"
+      },
+      {
+        "t": "Fortnite"
+      },
+      {
+        "t": "Immersive brand worlds"
+      },
+      {
+        "t": "Competitive sports games"
+      },
+      {
+        "t": "RPGs"
+      },
+      {
+        "t": "Simulators"
+      },
+      {
+        "t": "Social experiences"
+      },
+      {
+        "t": "Branded integrations"
+      }
+    ],
+    "diagram.legendInHouse": "In-house at Shakuri",
+    "diagram.legendPartners": "Specialist development partners, by genre and platform",
+    "brands.heading": "The teams behind Roblox's biggest brand campaigns.",
+    "brands.sub": "Now building yours.",
+    "brands.list": [
+      {
+        "t": "Hasbro"
+      },
+      {
+        "t": "Netflix"
+      },
+      {
+        "t": "Max Mara"
+      },
+      {
+        "t": "Spin Master"
+      },
+      {
+        "t": "Danone"
+      },
+      {
+        "t": "UPS"
+      },
+      {
+        "t": "Kraft Heinz"
+      },
+      {
+        "t": "Chupa Chups"
+      }
+    ],
+    "brands.note": "Projects delivered by members of our specialist development partner network, featured with their permission. All trademarks are the property of their respective owners.",
+    "close.line": "Tell us what you want to build and we’ll assemble the team.",
+    "close.button": "Speak to the team"
+  }
+}

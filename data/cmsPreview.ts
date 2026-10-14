@@ -6,6 +6,7 @@ import servicesPage from '../content/pages/services.json';
 import faqsPage from '../content/pages/faqs.json';
 import workPage from '../content/pages/work.json';
 import journalPage from '../content/pages/journal.json';
+import howWeWorkPage from '../content/pages/how-we-work.json';
 import site from '../content/site.json';
 import { refreshServices } from './services';
 import { refreshFaqs } from './faqs';
@@ -21,7 +22,7 @@ const listeners = new Set<() => void>();
 export const subscribePreview = (fn: () => void) => { listeners.add(fn); return () => { listeners.delete(fn); }; };
 export const previewVersion = () => version;
 
-const pages: Record<string, { slots: Record<string, any> }> = { home, services: servicesPage, faqs: faqsPage, work: workPage, journal: journalPage };
+const pages: Record<string, { slots: Record<string, any> }> = { home, services: servicesPage, faqs: faqsPage, work: workPage, journal: journalPage, 'how-we-work': howWeWorkPage };
 const replace = (target: Record<string, any>, next: Record<string, any>) => {
   for (const k of Object.keys(target)) if (!(k in next)) delete target[k];
   Object.assign(target, next);

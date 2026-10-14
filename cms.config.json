@@ -250,6 +250,143 @@
       }
     },
     {
+      "id": "how-we-work",
+      "label": "How We Work",
+      "path": "/how-we-work",
+      "fields": {
+        "intro.kicker": {
+          "type": "text",
+          "label": "Small label",
+          "max": 30,
+          "section": "Intro"
+        },
+        "intro.headBefore": {
+          "type": "text",
+          "label": "Headline (white part)",
+          "max": 40,
+          "section": "Intro"
+        },
+        "intro.headHighlight": {
+          "type": "text",
+          "label": "Headline (gradient part)",
+          "max": 30,
+          "section": "Intro"
+        },
+        "intro.lead": {
+          "type": "text",
+          "label": "Lead paragraph",
+          "max": 240,
+          "section": "Intro"
+        },
+        "intro.body": {
+          "type": "text",
+          "label": "Main text",
+          "max": 2000,
+          "section": "Intro",
+          "help": "Leave a blank line between paragraphs."
+        },
+        "diagram.hub": {
+          "type": "text",
+          "label": "Words in the centre circle",
+          "max": 40,
+          "section": "Team diagram"
+        },
+        "diagram.inHouse": {
+          "type": "list",
+          "label": "In-house skills (dark pills)",
+          "min": 5,
+          "max": 5,
+          "itemLabel": "t",
+          "section": "Team diagram",
+          "help": "Five, so they fit between the lines.",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Skill",
+              "max": 14
+            }
+          }
+        },
+        "diagram.partners": {
+          "type": "list",
+          "label": "Partner specialisms (white cards)",
+          "min": 8,
+          "max": 8,
+          "itemLabel": "t",
+          "section": "Team diagram",
+          "help": "Eight, one per card around the circle.",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Specialism",
+              "max": 26
+            }
+          }
+        },
+        "diagram.legendInHouse": {
+          "type": "text",
+          "label": "Key: in-house",
+          "max": 40,
+          "section": "Team diagram"
+        },
+        "diagram.legendPartners": {
+          "type": "text",
+          "label": "Key: partners",
+          "max": 70,
+          "section": "Team diagram"
+        },
+        "brands.heading": {
+          "type": "text",
+          "label": "Brand strip heading",
+          "max": 70,
+          "section": "Brand strip",
+          "help": "Also shown on the homepage."
+        },
+        "brands.sub": {
+          "type": "text",
+          "label": "Brand strip second line",
+          "max": 30,
+          "section": "Brand strip",
+          "help": "Also shown on the homepage."
+        },
+        "brands.list": {
+          "type": "list",
+          "label": "Brands",
+          "min": 3,
+          "max": 14,
+          "itemLabel": "t",
+          "section": "Brand strip",
+          "fields": {
+            "t": {
+              "type": "text",
+              "label": "Brand name",
+              "max": 24
+            }
+          }
+        },
+        "brands.note": {
+          "type": "text",
+          "label": "Small print under the brands",
+          "max": 260,
+          "required": false,
+          "section": "Brand strip"
+        },
+        "close.line": {
+          "type": "text",
+          "label": "Closing line",
+          "max": 120,
+          "section": "Closing"
+        },
+        "close.button": {
+          "type": "text",
+          "label": "Button text",
+          "max": 28,
+          "section": "Closing",
+          "help": "Takes visitors to the contact form."
+        }
+      }
+    },
+    {
       "id": "faqs",
       "label": "FAQs",
       "path": "/faqs",

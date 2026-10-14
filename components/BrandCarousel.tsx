@@ -2,12 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-const brands = [
-  'Hasbro', 'Netflix', 'Max Mara', 'Spin Master',
-  'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
-  'Hasbro', 'Netflix', 'Max Mara', 'Spin Master',
-  'Danone', 'UPS', 'Kraft Heinz', 'Chupa Chups',
-];
+import page from '../content/pages/how-we-work.json';
+
+// Edited in the CMS on the How We Work page (content/pages/how-we-work.json).
+const c = page.slots as Record<string, any>;
 
 interface BrandCarouselProps {
   /** Homepage: tagline and How We Work button, no scrolling brand strip. */
@@ -19,6 +17,9 @@ interface BrandCarouselProps {
 // diagram, shows the scrolling brands and borrows that page's background.
 export const BrandCarousel: React.FC<BrandCarouselProps> = ({ variant = 'home' }) => {
   const isHome = variant === 'home';
+  // the list runs twice so the strip scrolls without a gap
+  const names = (c['brands.list'] as { t: string }[]).map((b) => b.t).filter(Boolean);
+  const brands = [...names, ...names];
 
   return (
     <section className={`py-24 overflow-hidden relative ${isHome ? 'bg-black' : ''}`}>
@@ -28,10 +29,10 @@ export const BrandCarousel: React.FC<BrandCarouselProps> = ({ variant = 'home' }
 
       <div className={`relative text-center px-6 reveal ${isHome ? '' : 'mb-16'}`}>
         <h3 className="text-2xl md:text-5xl font-black tracking-tight uppercase text-white max-w-4xl mx-auto leading-none mb-4">
-          The teams behind Roblox's biggest brand campaigns.
+          {c['brands.heading']}
         </h3>
         <p className="text-3xl md:text-6xl font-black tracking-tighter uppercase text-cyan-400 drop-shadow-[0_0_30px_rgba(0,209,255,0.5)]">
-          Now building yours.
+          {c['brands.sub']}
         </p>
       </div>
 
@@ -51,10 +52,9 @@ export const BrandCarousel: React.FC<BrandCarouselProps> = ({ variant = 'home' }
         </div>
       )}
 
-      {!isHome && (
+      {!isHome && c['brands.note'] && (
         <p className="relative mx-auto mt-10 max-w-2xl px-6 text-center text-xs font-medium leading-relaxed text-gray-500">
-          Projects delivered by members of our specialist development partner network, featured
-          with their permission. All trademarks are the property of their respective owners.
+          {c['brands.note']}
         </p>
       )}
 
