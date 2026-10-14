@@ -188,3 +188,53 @@ body {
 .interactive-scale:hover {
     transform: scale(1.03);
 }
+
+/* "How We Work" CTA in the brand carousel: a pink-to-violet pill inside a
+   spinning spectrum ring, so it reads as the loudest thing in the section. */
+.rainbow-ring-btn {
+    position: relative;
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 9999px;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 0 40px -6px rgba(255, 0, 204, 0.55), 0 0 60px -10px rgba(0, 209, 255, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.rainbow-ring-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, #FF8A00, #FF00CC, #BD00FF, #00D1FF, #00FF94, #FF8A00, #FF00CC, #BD00FF, #00D1FF, #00FF94, #FF8A00);
+    background-size: 200% 100%;
+    animation: rainbow-ring-flow 4s linear infinite;
+}
+@keyframes rainbow-ring-flow {
+    from { background-position: 0% 50%; }
+    to { background-position: -200% 50%; }
+}
+.rainbow-ring-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 56px -4px rgba(255, 0, 204, 0.7), 0 0 80px -8px rgba(0, 209, 255, 0.6);
+}
+.rainbow-ring-btn:active {
+    transform: scale(0.97);
+}
+.rainbow-ring-btn-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 1.1rem 2.75rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #FF00CC 0%, #BD00FF 100%);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.125rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) {
+    .rainbow-ring-btn::before { animation: none; }
+}

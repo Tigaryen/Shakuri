@@ -60,6 +60,7 @@ export const Navbar: React.FC = () => {
   const navItems = [
     { label: 'Home', hover: 'hover:text-[#FF8A00]', action: goHome },
     { label: 'Our Services', hover: 'hover:text-[#BD00FF]', action: () => goTo('/services') },
+    { label: 'How We Work', hover: 'hover:text-[#5674FF]', action: () => goTo('/how-we-work') },
     { label: 'The Results', hover: 'hover:text-[#FF00CC]', action: () => goTo('/results') },
     { label: 'Value Calculator', hover: 'hover:text-[#00D1FF]', action: () => goTo('/calculator') },
     { label: 'FAQs', hover: 'hover:text-[#00FF94]', action: () => goTo('/faqs') },
@@ -74,12 +75,12 @@ export const Navbar: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex gap-7 text-xs font-black tracking-widest uppercase">
+        <div className="hidden lg:flex gap-5 xl:gap-7 text-xs font-black tracking-widest uppercase">
           {navItems.map((item) => (
             <button
               key={item.label}
               onClick={item.action}
-              className={`text-gray-400 transition-all hover:tracking-[0.25em] ${item.hover}`}
+              className={`whitespace-nowrap text-gray-400 transition-all hover:tracking-[0.25em] ${item.hover}`}
             >
               {item.label}
             </button>
@@ -89,7 +90,7 @@ export const Navbar: React.FC = () => {
         {/* Desktop CTA Button */}
         <button
           onClick={() => scrollTo('contact')}
-          className="hidden md:block bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
+          className="hidden md:block whitespace-nowrap bg-white text-black px-7 py-3 rounded-full font-black text-xs transition-all active:scale-90 btn-glow-cyan uppercase tracking-widest"
         >
           Speak to the team
         </button>

@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const brands = [
   'Hasbro', 'Moonbug', 'Netflix', 'Max Mara', 'Spin Master',
@@ -35,6 +37,15 @@ export const BrandCarousel: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="relative z-10 mt-14 flex justify-center px-6 reveal">
+        <Link to="/how-we-work" className="rainbow-ring-btn group">
+          <span className="rainbow-ring-btn-inner">
+            How We Work
+            <ArrowRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
       </div>
 
       {/* Subtle bottom edge gradient to section transition */}
