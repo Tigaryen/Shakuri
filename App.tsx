@@ -12,6 +12,7 @@ import { CalculatorPage } from './pages/CalculatorPage';
 import { metaForPath } from './data/routeMeta';
 import { FaqsPage } from './pages/FaqsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
+import { HowWeWorkPage } from './pages/HowWeWorkPage';
 import { CmsPage } from './pages/CmsPage';
 import { WorkPage, CaseStudyPage } from './pages/WorkPages';
 import { JournalPage, PostPage } from './pages/JournalPages';
@@ -95,6 +96,7 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/how-we-work" element={<HowWeWorkPage />} />
       <Route path="/results" element={<ResultsPage />} />
       <Route path="/calculator" element={<CalculatorPage />} />
       <Route path="/faqs" element={<FaqsPage />} />

@@ -24,7 +24,7 @@ export const Home: React.FC = () => {
         <Hook />
       </div>
 
-      <BrandCarousel />
+      <BrandCarousel variant="home" />
 
       <div id="services" className="reveal">
         <Services

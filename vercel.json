@@ -6,6 +6,10 @@
       "destination": "/services.html"
     },
     {
+      "source": "/how-we-work",
+      "destination": "/how-we-work.html"
+    },
+    {
       "source": "/results",
       "destination": "/results.html"
     },
