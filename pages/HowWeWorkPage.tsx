@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
+  Box,
   Globe,
   Trophy,
   Swords,
@@ -15,23 +16,27 @@ import { BrandCarousel } from '../components/BrandCarousel';
 
 // In-house capabilities: the dark pills on the inner ring.
 const inHouse = [
-  { label: 'Creative', x: 65.9, y: 28.2 },
-  { label: 'Strategy', x: 75.7, y: 58.3 },
-  { label: 'Production', x: 50, y: 77 },
-  { label: 'Marketing', x: 24.3, y: 58.3 },
-  { label: 'Management', x: 34.1, y: 28.2 },
+  // Placed in the gaps between the partner spokes so no line runs behind a pill.
+  { label: 'Creative', x: 50, y: 23 },
+  { label: 'Strategy', x: 77, y: 50 },
+  { label: 'Production', x: 69.1, y: 69.1 },
+  { label: 'Marketing', x: 30.9, y: 69.1 },
+  { label: 'Management', x: 23, y: 50 },
 ];
 
 // Specialist partners by genre and platform: the white cards on the outer ring.
 // x/y are percentages of the square diagram; spokes run from the centre to each.
 const partners: { label: string; icon: LucideIcon; color: string; x: number; y: number }[] = [
-  { label: 'Immersive brand worlds', icon: Globe, color: '#FF00CC', x: 67.3, y: 14 },
-  { label: 'Competitive sports games', icon: Trophy, color: '#BD00FF', x: 89, y: 41.1 },
-  { label: 'RPGs', icon: Swords, color: '#5674FF', x: 81.3, y: 75 },
-  { label: 'Simulators', icon: Joystick, color: '#BD00FF', x: 50, y: 90 },
-  { label: 'Social experiences', icon: Users, color: '#FF00CC', x: 18.7, y: 75 },
-  { label: 'Branded integrations', icon: Puzzle, color: '#BD00FF', x: 11, y: 41.1 },
-  { label: 'Fortnite', icon: Layers, color: '#5674FF', x: 32.7, y: 14 },
+  // Eight cards evenly spaced on a radius of 40, with the two platforms side
+  // by side at the top.
+  { label: 'Roblox', icon: Box, color: '#00D1FF', x: 34.7, y: 13 },
+  { label: 'Fortnite', icon: Layers, color: '#5674FF', x: 65.3, y: 13 },
+  { label: 'Immersive brand worlds', icon: Globe, color: '#FF00CC', x: 87, y: 34.7 },
+  { label: 'Competitive sports games', icon: Trophy, color: '#BD00FF', x: 87, y: 65.3 },
+  { label: 'RPGs', icon: Swords, color: '#5674FF', x: 65.3, y: 87 },
+  { label: 'Simulators', icon: Joystick, color: '#BD00FF', x: 34.7, y: 87 },
+  { label: 'Social experiences', icon: Users, color: '#FF00CC', x: 13, y: 65.3 },
+  { label: 'Branded integrations', icon: Puzzle, color: '#BD00FF', x: 13, y: 34.7 },
 ];
 
 const SPECTRUM =
@@ -47,7 +52,7 @@ const NetworkDiagram: React.FC = () => (
     className="relative w-full max-w-[720px] aspect-square"
     style={{ containerType: 'inline-size' }}
     role="img"
-    aria-label="Shakuri at the centre providing direction, oversight and strategy, with in-house creative, strategy, production, marketing and management, connected to specialist development partners for immersive brand worlds, competitive sports games, RPGs, simulators, social experiences, branded integrations and Fortnite."
+    aria-label="Shakuri at the centre providing direction, oversight and strategy, with in-house creative, strategy, production, marketing and management, connected to specialist development partners for Roblox, Fortnite, immersive brand worlds, competitive sports games, RPGs, simulators, social experiences and branded integrations."
   >
     <svg
       viewBox="0 0 100 100"
