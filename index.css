@@ -189,12 +189,12 @@ body {
     transform: scale(1.03);
 }
 
-/* "How We Work" CTA in the brand carousel: a deep violet pill inside a
+/* "How We Work" CTA in the brand carousel: a spectrum-filled pill inside a
    spinning spectrum ring, so it reads as the loudest thing in the section. */
 .rainbow-ring-btn {
     position: relative;
     display: inline-flex;
-    padding: 4px;
+    padding: 5px;
     border-radius: 9999px;
     overflow: hidden;
     isolation: isolate;
@@ -216,7 +216,7 @@ body {
 }
 .rainbow-ring-btn:hover {
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 0 48px -6px rgba(189, 0, 255, 0.6), 0 0 72px -10px rgba(0, 209, 255, 0.5);
+    box-shadow: 0 0 45px rgba(255, 0, 204, 0.9), 0 0 90px rgba(0, 209, 255, 0.4);
 }
 .rainbow-ring-btn:active {
     transform: scale(0.97);
@@ -228,7 +228,10 @@ body {
     min-height: 44px;
     padding: 1.1rem 2.75rem;
     border-radius: 9999px;
-    background: linear-gradient(135deg, #4C2A85 0%, #2E2163 100%);
+    /* Same fill as the Run the Numbers button (.bg-shakuri-gradient). The black
+       inset ring keeps the moving spectrum outline readable against it. */
+    background: linear-gradient(135deg, #FF8A00 0%, #FF00CC 25%, #BD00FF 50%, #00D1FF 75%, #00FF94 100%);
+    box-shadow: 0 0 0 2px #000;
     color: #fff;
     font-weight: 800;
     font-size: 1.125rem;
